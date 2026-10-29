@@ -1,0 +1,44 @@
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: nf
+      POSTGRES_PASSWORD: nf
+      POSTGRES_DB: nf
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nf -d nf"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+
+  migrate:
+    build:
+      context: .
+      target: build
+    command: npx drizzle-kit migrate
+    environment:
+      DATABASE_URL: postgres://nf:nf@db:5432/nf
+    depends_on:
+      db:
+        condition: service_healthy
+
+  app:
+    build: .
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    environment:
+      DATABASE_URL: postgres://nf:nf@db:5432/nf
+      EXTRACTOR: ${EXTRACTOR:-fake}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      EXTRACTION_MODEL: ${EXTRACTION_MODEL:-claude-opus-5-5}
+      DAILY_BUDGET_USD: ${DAILY_BUDGET_USD:-1}
+    ports:
+      - "3000:3000"
+
+volumes:
+  pgdata:

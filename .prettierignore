@@ -1,0 +1,11 @@
+.next
+coverage
+drizzle
+public
+test-results
+playwright-report
+eval/notas
+.processo
+package-lock.json
+AGENTS.md
+eval/gabarito.json
