@@ -67,13 +67,19 @@ export class DrizzleNotaRepositorio implements NotaRepositorio {
       .where(eq(documentos.id, id));
     if (!d) return undefined;
     const [ultima] = await this.db
-      .select({ erro: extracoes.erro })
+      .select({ erro: extracoes.erro, modelo: extracoes.modelo })
       .from(extracoes)
       .where(eq(extracoes.documentoId, id))
       .orderBy(desc(extracoes.criadoEm))
       .limit(1);
     const nota = await this.lerNota(id);
-    return { ...d, mime: d.mime as MimeAceito, nota, erro: ultima?.erro ?? null };
+    return {
+      ...d,
+      mime: d.mime as MimeAceito,
+      nota,
+      erro: ultima?.erro ?? null,
+      modelo: ultima?.modelo ?? null,
+    };
   }
 
   async listar(limite: number): Promise<ResumoDocumento[]> {

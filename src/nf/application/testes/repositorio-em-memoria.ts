@@ -16,6 +16,7 @@ interface Registro extends NovoDocumento {
   criadoEm: Date;
   nota: Nota | null;
   erro: string | null;
+  modelo: string | null;
 }
 
 export class RepositorioEmMemoria implements NotaRepositorio {
@@ -38,6 +39,7 @@ export class RepositorioEmMemoria implements NotaRepositorio {
       criadoEm: this.agora(),
       nota: null,
       erro: null,
+      modelo: null,
     });
     return id;
   }
@@ -45,13 +47,13 @@ export class RepositorioEmMemoria implements NotaRepositorio {
   async concluirExtracao(id: string, r: ResultadoExtracao) {
     const d = this.pegar(id);
     this.custos.push({ valor: r.custoUsd, em: this.agora() });
-    Object.assign(d, { nota: r.nota, status: "revisao", erro: null });
+    Object.assign(d, { nota: r.nota, status: "revisao", erro: null, modelo: r.modelo });
   }
 
   async registrarFalha(id: string, erro: string, uso: UsoModelo | undefined) {
     const d = this.pegar(id);
     if (uso) this.custos.push({ valor: uso.custoUsd, em: this.agora() });
-    Object.assign(d, { status: "falhou", erro });
+    Object.assign(d, { status: "falhou", erro, modelo: uso?.modelo ?? d.modelo });
   }
 
   async custoDesde(inicio: Date) {
@@ -60,7 +62,7 @@ export class RepositorioEmMemoria implements NotaRepositorio {
 
   async buscar(id: string): Promise<DocumentoComNota | undefined> {
     const d = this.docs.get(id);
-    return d && { ...this.resumo(d), mime: d.mime, nota: d.nota, erro: d.erro };
+    return d && { ...this.resumo(d), mime: d.mime, nota: d.nota, erro: d.erro, modelo: d.modelo };
   }
 
   async listar(limite: number) {

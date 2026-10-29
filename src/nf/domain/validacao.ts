@@ -1,5 +1,5 @@
 import { cnpjValido } from "./cnpj";
-import { formatarReais, paraCentavos } from "./dinheiro";
+import { formatarDecimalBr, formatarReais, paraCentavos } from "./dinheiro";
 import type { Nota, Sinalizacao } from "./nota";
 
 // prazo de guarda dos documentos fiscais
@@ -71,7 +71,8 @@ export function validarNota(nota: Nota, hoje: string): Sinalizacao[] {
         codigo: "item_inconsistente",
         item: i,
         mensagem:
-          `Item ${i + 1}: ${item.quantidade} × ${item.valorUnitario} = ${formatarReais(calculado)}, ` +
+          `Item ${i + 1}: ${formatarDecimalBr(item.quantidade, 0, 4)} × ` +
+          `${formatarDecimalBr(item.valorUnitario, 2, 4)} = ${formatarReais(calculado)}, ` +
           `mas o total do item é ${formatarReais(item.valorTotal)}.`,
       });
     }

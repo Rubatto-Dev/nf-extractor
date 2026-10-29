@@ -17,3 +17,20 @@ const brl = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" 
 export function formatarReais(c: Centavos): string {
   return brl.format(c / 100).replace(/ /g, " ");
 }
+
+/** Número digitado em pt-BR ("1.234,56", "R$ 10", "0,916") → número; null se não for número. */
+export function lerDecimalBr(texto: string): number | null {
+  const limpo = texto.replace(/R\$|\s/g, "");
+  if (!/^-?[\d.]*,?\d*$/.test(limpo) || !/\d/.test(limpo)) return null;
+  return Number(limpo.replace(/\./g, "").replace(",", "."));
+}
+
+export function lerReais(texto: string): Centavos | null {
+  const n = lerDecimalBr(texto);
+  return n === null ? null : paraCentavos(n);
+}
+
+/** Número → texto pt-BR com separador de milhar, entre `min` e `max` casas decimais. */
+export function formatarDecimalBr(n: number, min = 2, max = min): string {
+  return n.toLocaleString("pt-BR", { minimumFractionDigits: min, maximumFractionDigits: max });
+}

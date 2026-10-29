@@ -39,6 +39,8 @@ export interface DocumentoComNota extends ResumoDocumento {
   mime: MimeAceito;
   nota: Nota | null;
   erro: string | null;
+  /** modelo da última extração; null antes da primeira */
+  modelo: string | null;
 }
 
 export interface NovoDocumento {

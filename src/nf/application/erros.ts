@@ -43,3 +43,10 @@ export class NotaNaoEncontrada extends Error {
     this.name = "NotaNaoEncontrada";
   }
 }
+
+export class NotaComSinalizacoes extends Error {
+  constructor(readonly quantidade: number) {
+    super(`A nota tem ${quantidade} alerta(s) e não pode ser aprovada.`);
+    this.name = "NotaComSinalizacoes";
+  }
+}

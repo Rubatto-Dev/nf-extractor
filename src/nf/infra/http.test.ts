@@ -3,6 +3,7 @@ import { z } from "zod";
 import {
   ArquivoInvalido,
   ErroExtracao,
+  NotaComSinalizacoes,
   NotaNaoEncontrada,
   OrcamentoEsgotado,
 } from "../application/erros";
@@ -16,6 +17,7 @@ describe("respostaDeErro", () => {
   it.each([
     [new ArquivoInvalido("vazio"), 422, "arquivo_invalido"],
     [new NotaNaoEncontrada("x"), 404, "nao_encontrada"],
+    [new NotaComSinalizacoes(2), 422, "nota_com_alertas"],
     [zodErro, 422, "dados_invalidos"],
     [new OrcamentoEsgotado(1.2, 1), 429, "teto_diario"],
     [new ErroExtracao("nao_e_nota", "não é nota"), 422, "nao_e_nota"],

@@ -3,6 +3,7 @@ import {
   ArquivoInvalido,
   ErroExtracao,
   type MotivoFalhaExtracao,
+  NotaComSinalizacoes,
   NotaNaoEncontrada,
   OrcamentoEsgotado,
 } from "../application/erros";
@@ -23,6 +24,7 @@ export function respostaDeErro(err: unknown, contexto: string): Response {
 
   if (err instanceof ArquivoInvalido) return corpo(422, "arquivo_invalido", err.message);
   if (err instanceof NotaNaoEncontrada) return corpo(404, "nao_encontrada", err.message);
+  if (err instanceof NotaComSinalizacoes) return corpo(422, "nota_com_alertas", err.message);
   if (err instanceof ZodError) {
     return corpo(422, "dados_invalidos", err.issues.map((i) => i.message).join("; "));
   }
