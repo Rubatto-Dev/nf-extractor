@@ -98,10 +98,10 @@ export function Revisao({ documento, nota, hoje, fila }: Props) {
   }
 
   return (
-    <div className="flex min-h-dvh flex-col md:flex-row">
+    <div className="flex min-h-dvh flex-col lg:flex-row">
       <nav
         aria-label="Notas em revisão"
-        className="flex w-full flex-col gap-0.5 border-b border-black/[0.08] bg-lateral px-2.5 py-4 md:min-h-dvh md:w-60 md:shrink-0 md:border-r md:border-b-0"
+        className="flex w-full flex-col gap-0.5 border-b border-black/[0.08] bg-lateral px-2.5 py-4 lg:min-h-dvh lg:w-56 lg:shrink-0 lg:border-r lg:border-b-0 xl:w-60"
       >
         <Link
           href="/"
@@ -151,7 +151,7 @@ export function Revisao({ documento, nota, hoje, fila }: Props) {
 
       <aside
         aria-label="Dados extraídos"
-        className="flex w-full shrink-0 flex-col bg-superficie md:w-[460px]"
+        className="flex w-full shrink-0 flex-col bg-superficie lg:w-[400px] xl:w-[460px]"
       >
         <div className="flex items-center gap-2 border-b border-linha px-5 py-4">
           <h1 className="text-[17px] font-semibold tracking-tight">Dados extraídos</h1>
@@ -295,7 +295,7 @@ export function Revisao({ documento, nota, hoje, fila }: Props) {
                   )}
                 </div>
                 <div className="overflow-x-auto rounded-xl shadow-[0_0_0_1px_rgb(0_0_0/0.07)]">
-                  <table className="w-full min-w-[400px] border-collapse text-[13px]">
+                  <table className="w-full min-w-[340px] border-collapse text-[13px]">
                     <thead>
                       <tr className="bg-[#fafafb] text-left text-[11px] text-secundario">
                         <th scope="col" className="px-2.5 py-2 font-medium">

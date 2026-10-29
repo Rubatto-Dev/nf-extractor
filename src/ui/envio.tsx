@@ -169,9 +169,9 @@ function Extraindo({ nome, descricao, preview }: EmAndamento) {
       role="dialog"
       aria-modal="true"
       aria-label="Extraindo a nota"
-      className="fixed inset-0 z-50 flex flex-col overflow-auto bg-fundo md:flex-row"
+      className="fixed inset-0 z-50 flex flex-col overflow-auto bg-fundo lg:flex-row"
     >
-      <aside className="hidden w-60 shrink-0 flex-col gap-1 border-r border-black/[0.08] bg-lateral px-2.5 py-4 md:flex">
+      <aside className="hidden w-60 shrink-0 flex-col gap-1 border-r border-black/[0.08] bg-lateral px-2.5 py-4 lg:flex">
         <span className="flex items-center gap-1.5 px-2.5 pb-3.5 text-[13px] font-medium text-link">
           <IconeVoltar tamanho={14} /> Todas as notas
         </span>
@@ -206,7 +206,7 @@ function Extraindo({ nome, descricao, preview }: EmAndamento) {
       <aside
         aria-label="Dados extraídos"
         aria-busy="true"
-        className="flex w-full shrink-0 flex-col bg-superficie md:w-[440px]"
+        className="flex w-full shrink-0 flex-col bg-superficie lg:w-[400px] xl:w-[440px]"
       >
         <div className="flex items-center gap-2 border-b border-linha px-5 py-4">
           <h2 className="text-[17px] font-semibold tracking-tight">Dados extraídos</h2>

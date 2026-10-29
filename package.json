@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "postbuild": "cp -r public .next/standalone/ && cp -r .next/static .next/standalone/.next/",
+    "start": "node .next/standalone/server.js",
     "lint": "eslint --max-warnings=0",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
@@ -13,6 +14,7 @@
     "test": "vitest run --project unit",
     "test:int": "vitest run --project integracao",
     "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
     "eval:gerar": "tsx eval/gerar.ts",
     "eval": "tsx --env-file-if-exists=.env eval/rodar.ts",
     "db:generate": "drizzle-kit generate",

@@ -12,6 +12,17 @@ concurrency:
 jobs:
   ci:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: nf
+          POSTGRES_PASSWORD: nf
+          POSTGRES_DB: nf
+        ports: ["5433:5432"]
+        options: >-
+          --health-cmd "pg_isready -U nf -d nf" --health-interval 2s --health-timeout 3s
+          --health-retries 20
     env:
       DATABASE_URL: postgres://nf:nf@localhost:5433/nf
       EXTRACTOR: fake
@@ -25,5 +36,15 @@ jobs:
       - run: npm run lint
       - run: npm run format:check
       - run: npm run typecheck
+      # unitários + integração (testcontainers usa o Docker do runner), com threshold de cobertura
       - run: npm run test:coverage
       - run: npm run build
+      - run: npm run db:migrate
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-trace
+          path: test-results/
+          retention-days: 7
