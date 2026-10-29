@@ -1,0 +1,2732 @@
+{
+  "modelo": "claude-haiku-5-5",
+  "data": "2026-10-29",
+  "geral": {
+    "documentos": 30,
+    "falhas": 0,
+    "acertoPorCampo": {
+      "cnpj": 100,
+      "data": 100,
+      "total": 96.7,
+      "desconto": 100,
+      "frete": 100,
+      "itens": 100
+    },
+    "notasPerfeitas": 96.7,
+    "errosSinalizados": {
+      "pegos": 1,
+      "deNotasComErro": 1
+    },
+    "falsosAlarmes": 0,
+    "custoMedioUsd": 0.0004754266666666666,
+    "custoTotalUsd": 0.014262799999999999,
+    "latenciaMs": {
+      "p50": 2069,
+      "p95": 3310
+    }
+  },
+  "porFormato": {
+    "danfe-pdf": {
+      "documentos": 10,
+      "falhas": 0,
+      "acertoPorCampo": {
+        "cnpj": 100,
+        "data": 100,
+        "total": 100,
+        "desconto": 100,
+        "frete": 100,
+        "itens": 100
+      },
+      "notasPerfeitas": 100,
+      "errosSinalizados": {
+        "pegos": 0,
+        "deNotasComErro": 0
+      },
+      "falsosAlarmes": 0,
+      "custoMedioUsd": 0.00052231,
+      "custoTotalUsd": 0.0052231,
+      "latenciaMs": {
+        "p50": 1928,
+        "p95": 2561
+      }
+    },
+    "danfe-foto": {
+      "documentos": 10,
+      "falhas": 0,
+      "acertoPorCampo": {
+        "cnpj": 100,
+        "data": 100,
+        "total": 100,
+        "desconto": 100,
+        "frete": 100,
+        "itens": 100
+      },
+      "notasPerfeitas": 100,
+      "errosSinalizados": {
+        "pegos": 0,
+        "deNotasComErro": 0
+      },
+      "falsosAlarmes": 0,
+      "custoMedioUsd": 0.00045553999999999994,
+      "custoTotalUsd": 0.004555399999999999,
+      "latenciaMs": {
+        "p50": 2004,
+        "p95": 5707
+      }
+    },
+    "nfce-foto": {
+      "documentos": 10,
+      "falhas": 0,
+      "acertoPorCampo": {
+        "cnpj": 100,
+        "data": 100,
+        "total": 90,
+        "desconto": 100,
+        "frete": 100,
+        "itens": 100
+      },
+      "notasPerfeitas": 90,
+      "errosSinalizados": {
+        "pegos": 1,
+        "deNotasComErro": 1
+      },
+      "falsosAlarmes": 0,
+      "custoMedioUsd": 0.00044843,
+      "custoTotalUsd": 0.0044843,
+      "latenciaMs": {
+        "p50": 2405,
+        "p95": 2609
+      }
+    }
+  },
+  "execucoes": [
+    {
+      "id": "nota-01",
+      "formato": "danfe-pdf",
+      "esperado": {
+        "cnpjEmitente": "68293943000193",
+        "dataEmissao": "2026-02-09",
+        "valorTotal": 876212,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "SABAO EM PO 1,6KG",
+            "quantidade": 4,
+            "valorUnitario": 23.13,
+            "valorTotal": 9252
+          },
+          {
+            "descricao": "TINTA ACRILICA BRANCO 18L",
+            "quantidade": 40,
+            "valorUnitario": 216.74,
+            "valorTotal": 866960
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "68293943000193",
+        "dataEmissao": "2026-02-09",
+        "valorTotal": 876212,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "SABAO EM PO 1,6KG",
+            "quantidade": 4,
+            "valorUnitario": 23.13,
+            "valorTotal": 9252
+          },
+          {
+            "descricao": "TINTA ACRILICA BRANCO 18L",
+            "quantidade": 40,
+            "valorUnitario": 216.74,
+            "valorTotal": 866960
+          }
+        ]
+      },
+      "custoUsd": 0.00043210000000000004,
+      "latenciaMs": 1667
+    },
+    {
+      "id": "nota-02",
+      "formato": "danfe-pdf",
+      "esperado": {
+        "cnpjEmitente": "44402287000151",
+        "dataEmissao": "2026-01-29",
+        "valorTotal": 237616,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "PARAFUSO SEXTAVADO 1/4 X 2",
+            "quantidade": 29,
+            "valorUnitario": 36.62,
+            "valorTotal": 106198
+          },
+          {
+            "descricao": "SABAO EM PO 1,6KG",
+            "quantidade": 3,
+            "valorUnitario": 22.09,
+            "valorTotal": 6627
+          },
+          {
+            "descricao": "PAO FRANCES",
+            "quantidade": 0.556,
+            "valorUnitario": 19.44,
+            "valorTotal": 1081
+          },
+          {
+            "descricao": "LAMPADA LED 9W BIVOLT",
+            "quantidade": 28,
+            "valorUnitario": 12.36,
+            "valorTotal": 34608
+          },
+          {
+            "descricao": "ACUCAR CRISTAL 5KG",
+            "quantidade": 24,
+            "valorUnitario": 20.58,
+            "valorTotal": 49392
+          },
+          {
+            "descricao": "FEIJAO CARIOCA 1KG",
+            "quantidade": 38,
+            "valorUnitario": 10.45,
+            "valorTotal": 39710
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "44402287000151",
+        "dataEmissao": "2026-01-29",
+        "valorTotal": 237616,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "PARAFUSO SEXTAVADO 1/4 X 2",
+            "quantidade": 29,
+            "valorUnitario": 36.62,
+            "valorTotal": 106198
+          },
+          {
+            "descricao": "SABAO EM PO 1,6KG",
+            "quantidade": 3,
+            "valorUnitario": 22.09,
+            "valorTotal": 6627
+          },
+          {
+            "descricao": "PAO FRANCES",
+            "quantidade": 0.556,
+            "valorUnitario": 19.44,
+            "valorTotal": 1081
+          },
+          {
+            "descricao": "LAMPADA LED 9W BIVOLT",
+            "quantidade": 28,
+            "valorUnitario": 12.36,
+            "valorTotal": 34608
+          },
+          {
+            "descricao": "ACUCAR CRISTAL 5KG",
+            "quantidade": 24,
+            "valorUnitario": 20.58,
+            "valorTotal": 49392
+          },
+          {
+            "descricao": "FEIJAO CARIOCA 1KG",
+            "quantidade": 38,
+            "valorUnitario": 10.45,
+            "valorTotal": 39710
+          }
+        ]
+      },
+      "custoUsd": 0.0005551,
+      "latenciaMs": 2493
+    },
+    {
+      "id": "nota-03",
+      "formato": "danfe-pdf",
+      "esperado": {
+        "cnpjEmitente": "74766468000128",
+        "dataEmissao": "2026-02-04",
+        "valorTotal": 366273,
+        "desconto": 7419,
+        "frete": 2719,
+        "itens": [
+          {
+            "descricao": "PARAFUSO SEXTAVADO 1/4 X 2",
+            "quantidade": 30,
+            "valorUnitario": 26.59,
+            "valorTotal": 79770
+          },
+          {
+            "descricao": "TONER COMPATIVEL HP 85A",
+            "quantidade": 23,
+            "valorUnitario": 126.61,
+            "valorTotal": 291203
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "74766468000128",
+        "dataEmissao": "2026-02-04",
+        "valorTotal": 366273,
+        "desconto": 7419,
+        "frete": 2719,
+        "itens": [
+          {
+            "descricao": "PARAFUSO SEXTAVADO 1/4 X 2",
+            "quantidade": 30,
+            "valorUnitario": 26.59,
+            "valorTotal": 79770
+          },
+          {
+            "descricao": "TONER COMPATIVEL HP 85A",
+            "quantidade": 23,
+            "valorUnitario": 126.61,
+            "valorTotal": 291203
+          }
+        ]
+      },
+      "custoUsd": 0.0004373,
+      "latenciaMs": 1743
+    },
+    {
+      "id": "nota-04",
+      "formato": "danfe-pdf",
+      "esperado": {
+        "cnpjEmitente": "89067741000101",
+        "dataEmissao": "2026-04-02",
+        "valorTotal": 104588,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "OLEO DE SOJA 900ML",
+            "quantidade": 29,
+            "valorUnitario": 9.8,
+            "valorTotal": 28420
+          },
+          {
+            "descricao": "PAPEL TOALHA 2 ROLOS",
+            "quantidade": 24,
+            "valorUnitario": 7.36,
+            "valorTotal": 17664
+          },
+          {
+            "descricao": "CADERNO UNIVERSITARIO 96 FLS",
+            "quantidade": 14,
+            "valorUnitario": 12.12,
+            "valorTotal": 16968
+          },
+          {
+            "descricao": "PASTA SUSPENSA KRAFT",
+            "quantidade": 36,
+            "valorUnitario": 2.95,
+            "valorTotal": 10620
+          },
+          {
+            "descricao": "AGUA MINERAL 1,5L",
+            "quantidade": 3,
+            "valorUnitario": 2.8,
+            "valorTotal": 840
+          },
+          {
+            "descricao": "CANETA ESFEROGRAFICA AZUL",
+            "quantidade": 18,
+            "valorUnitario": 2.14,
+            "valorTotal": 3852
+          },
+          {
+            "descricao": "QUEIJO MUSSARELA FATIADO",
+            "quantidade": 1.428,
+            "valorUnitario": 51.12,
+            "valorTotal": 7300
+          },
+          {
+            "descricao": "FITA ISOLANTE 20M",
+            "quantidade": 19,
+            "valorUnitario": 9.96,
+            "valorTotal": 18924
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "89067741000101",
+        "dataEmissao": "2026-04-02",
+        "valorTotal": 104588,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "OLEO DE SOJA 900ML",
+            "quantidade": 29,
+            "valorUnitario": 9.8,
+            "valorTotal": 28420
+          },
+          {
+            "descricao": "PAPEL TOALHA 2 ROLOS",
+            "quantidade": 24,
+            "valorUnitario": 7.36,
+            "valorTotal": 17664
+          },
+          {
+            "descricao": "CADERNO UNIVERSITARIO 96 FLS",
+            "quantidade": 14,
+            "valorUnitario": 12.12,
+            "valorTotal": 16968
+          },
+          {
+            "descricao": "PASTA SUSPENSA KRAFT",
+            "quantidade": 36,
+            "valorUnitario": 2.95,
+            "valorTotal": 10620
+          },
+          {
+            "descricao": "AGUA MINERAL 1,5L",
+            "quantidade": 3,
+            "valorUnitario": 2.8,
+            "valorTotal": 840
+          },
+          {
+            "descricao": "CANETA ESFEROGRAFICA AZUL",
+            "quantidade": 18,
+            "valorUnitario": 2.14,
+            "valorTotal": 3852
+          },
+          {
+            "descricao": "QUEIJO MUSSARELA FATIADO",
+            "quantidade": 1.428,
+            "valorUnitario": 51.12,
+            "valorTotal": 7300
+          },
+          {
+            "descricao": "FITA ISOLANTE 20M",
+            "quantidade": 19,
+            "valorUnitario": 9.96,
+            "valorTotal": 18924
+          }
+        ]
+      },
+      "custoUsd": 0.0006194000000000001,
+      "latenciaMs": 2437
+    },
+    {
+      "id": "nota-05",
+      "formato": "danfe-pdf",
+      "esperado": {
+        "cnpjEmitente": "95151673000159",
+        "dataEmissao": "2026-05-18",
+        "valorTotal": 134995,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "CANETA ESFEROGRAFICA AZUL",
+            "quantidade": 14,
+            "valorUnitario": 1.77,
+            "valorTotal": 2478
+          },
+          {
+            "descricao": "CAFE TORRADO MOIDO 500G",
+            "quantidade": 17,
+            "valorUnitario": 24.2,
+            "valorTotal": 41140
+          },
+          {
+            "descricao": "OLEO DE SOJA 900ML",
+            "quantidade": 5,
+            "valorUnitario": 7.66,
+            "valorTotal": 3830
+          },
+          {
+            "descricao": "LAMPADA LED 9W BIVOLT",
+            "quantidade": 15,
+            "valorUnitario": 8.75,
+            "valorTotal": 13125
+          },
+          {
+            "descricao": "TOMATE ITALIANO",
+            "quantidade": 2.011,
+            "valorUnitario": 7.07,
+            "valorTotal": 1422
+          },
+          {
+            "descricao": "SABAO EM PO 1,6KG",
+            "quantidade": 25,
+            "valorUnitario": 29.2,
+            "valorTotal": 73000
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "95151673000159",
+        "dataEmissao": "2026-05-18",
+        "valorTotal": 134995,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "CANETA ESFEROGRAFICA AZUL",
+            "quantidade": 14,
+            "valorUnitario": 1.77,
+            "valorTotal": 2478
+          },
+          {
+            "descricao": "CAFE TORRADO MOIDO 500G",
+            "quantidade": 17,
+            "valorUnitario": 24.2,
+            "valorTotal": 41140
+          },
+          {
+            "descricao": "OLEO DE SOJA 900ML",
+            "quantidade": 5,
+            "valorUnitario": 7.66,
+            "valorTotal": 3830
+          },
+          {
+            "descricao": "LAMPADA LED 9W BIVOLT",
+            "quantidade": 15,
+            "valorUnitario": 8.75,
+            "valorTotal": 13125
+          },
+          {
+            "descricao": "TOMATE ITALIANO",
+            "quantidade": 2.011,
+            "valorUnitario": 7.07,
+            "valorTotal": 1422
+          },
+          {
+            "descricao": "SABAO EM PO 1,6KG",
+            "quantidade": 25,
+            "valorUnitario": 29.2,
+            "valorTotal": 73000
+          }
+        ]
+      },
+      "custoUsd": 0.0005514000000000001,
+      "latenciaMs": 2069
+    },
+    {
+      "id": "nota-06",
+      "formato": "danfe-pdf",
+      "esperado": {
+        "cnpjEmitente": "93431342000147",
+        "dataEmissao": "2026-05-06",
+        "valorTotal": 282245,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "SABAO EM PO 1,6KG",
+            "quantidade": 18,
+            "valorUnitario": 27.05,
+            "valorTotal": 48690
+          },
+          {
+            "descricao": "LAMPADA LED 9W BIVOLT",
+            "quantidade": 14,
+            "valorUnitario": 12.9,
+            "valorTotal": 18060
+          },
+          {
+            "descricao": "MOUSE OPTICO USB",
+            "quantidade": 21,
+            "valorUnitario": 37.1,
+            "valorTotal": 77910
+          },
+          {
+            "descricao": "CIMENTO CP II 50KG",
+            "quantidade": 35,
+            "valorUnitario": 39.31,
+            "valorTotal": 137585
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "93431342000147",
+        "dataEmissao": "2026-05-06",
+        "valorTotal": 282245,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "SABAO EM PO 1,6KG",
+            "quantidade": 18,
+            "valorUnitario": 27.05,
+            "valorTotal": 48690
+          },
+          {
+            "descricao": "LAMPADA LED 9W BIVOLT",
+            "quantidade": 14,
+            "valorUnitario": 12.9,
+            "valorTotal": 18060
+          },
+          {
+            "descricao": "MOUSE OPTICO USB",
+            "quantidade": 21,
+            "valorUnitario": 37.1,
+            "valorTotal": 77910
+          },
+          {
+            "descricao": "CIMENTO CP II 50KG",
+            "quantidade": 35,
+            "valorUnitario": 39.31,
+            "valorTotal": 137585
+          }
+        ]
+      },
+      "custoUsd": 0.00048820000000000005,
+      "latenciaMs": 1928
+    },
+    {
+      "id": "nota-07",
+      "formato": "danfe-pdf",
+      "esperado": {
+        "cnpjEmitente": "21114777000157",
+        "dataEmissao": "2026-03-03",
+        "valorTotal": 84630,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "PAPEL A4 75G RESMA 500 FLS",
+            "quantidade": 26,
+            "valorUnitario": 30.7,
+            "valorTotal": 79820
+          },
+          {
+            "descricao": "FITA ISOLANTE 20M",
+            "quantidade": 5,
+            "valorUnitario": 9.62,
+            "valorTotal": 4810
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "21114777000157",
+        "dataEmissao": "2026-03-03",
+        "valorTotal": 84630,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "PAPEL A4 75G RESMA 500 FLS",
+            "quantidade": 26,
+            "valorUnitario": 30.7,
+            "valorTotal": 79820
+          },
+          {
+            "descricao": "FITA ISOLANTE 20M",
+            "quantidade": 5,
+            "valorUnitario": 9.62,
+            "valorTotal": 4810
+          }
+        ]
+      },
+      "custoUsd": 0.0004309,
+      "latenciaMs": 1519
+    },
+    {
+      "id": "nota-08",
+      "formato": "danfe-pdf",
+      "esperado": {
+        "cnpjEmitente": "BT4VDYQO000150",
+        "dataEmissao": "2026-04-28",
+        "valorTotal": 156400,
+        "desconto": 13323,
+        "frete": 3186,
+        "itens": [
+          {
+            "descricao": "CAFE TORRADO MOIDO 500G",
+            "quantidade": 16,
+            "valorUnitario": 29.06,
+            "valorTotal": 46496
+          },
+          {
+            "descricao": "ARROZ TIPO 1 5KG",
+            "quantidade": 22,
+            "valorUnitario": 31.11,
+            "valorTotal": 68442
+          },
+          {
+            "descricao": "DETERGENTE NEUTRO 500ML",
+            "quantidade": 19,
+            "valorUnitario": 2.82,
+            "valorTotal": 5358
+          },
+          {
+            "descricao": "FEIJAO CARIOCA 1KG",
+            "quantidade": 38,
+            "valorUnitario": 9.69,
+            "valorTotal": 36822
+          },
+          {
+            "descricao": "QUEIJO MUSSARELA FATIADO",
+            "quantidade": 1.722,
+            "valorUnitario": 54.7,
+            "valorTotal": 9419
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "BT4VDYQO000150",
+        "dataEmissao": "2026-04-28",
+        "valorTotal": 156400,
+        "desconto": 13323,
+        "frete": 3186,
+        "itens": [
+          {
+            "descricao": "CAFE TORRADO MOIDO 500G",
+            "quantidade": 16,
+            "valorUnitario": 29.06,
+            "valorTotal": 46496
+          },
+          {
+            "descricao": "ARROZ TIPO 1 5KG",
+            "quantidade": 22,
+            "valorUnitario": 31.11,
+            "valorTotal": 68442
+          },
+          {
+            "descricao": "DETERGENTE NEUTRO 500ML",
+            "quantidade": 19,
+            "valorUnitario": 2.82,
+            "valorTotal": 5358
+          },
+          {
+            "descricao": "FEIJAO CARIOCA 1KG",
+            "quantidade": 38,
+            "valorUnitario": 9.69,
+            "valorTotal": 36822
+          },
+          {
+            "descricao": "QUEIJO MUSSARELA FATIADO",
+            "quantidade": 1.722,
+            "valorUnitario": 54.7,
+            "valorTotal": 9419
+          }
+        ]
+      },
+      "custoUsd": 0.0006265,
+      "latenciaMs": 2561
+    },
+    {
+      "id": "nota-09",
+      "formato": "danfe-pdf",
+      "esperado": {
+        "cnpjEmitente": "67333314000187",
+        "dataEmissao": "2025-10-25",
+        "valorTotal": 128906,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "FEIJAO CARIOCA 1KG",
+            "quantidade": 12,
+            "valorUnitario": 9.69,
+            "valorTotal": 11628
+          },
+          {
+            "descricao": "FITA ISOLANTE 20M",
+            "quantidade": 33,
+            "valorUnitario": 6.82,
+            "valorTotal": 22506
+          },
+          {
+            "descricao": "LAMPADA LED 9W BIVOLT",
+            "quantidade": 27,
+            "valorUnitario": 13,
+            "valorTotal": 35100
+          },
+          {
+            "descricao": "PAPEL TOALHA 2 ROLOS",
+            "quantidade": 8,
+            "valorUnitario": 9.26,
+            "valorTotal": 7408
+          },
+          {
+            "descricao": "QUEIJO MUSSARELA FATIADO",
+            "quantidade": 2.115,
+            "valorUnitario": 43.99,
+            "valorTotal": 9304
+          },
+          {
+            "descricao": "CADERNO UNIVERSITARIO 96 FLS",
+            "quantidade": 20,
+            "valorUnitario": 21.48,
+            "valorTotal": 42960
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "67333314000187",
+        "dataEmissao": "2025-10-25",
+        "valorTotal": 128906,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "FEIJAO CARIOCA 1KG",
+            "quantidade": 12,
+            "valorUnitario": 9.69,
+            "valorTotal": 11628
+          },
+          {
+            "descricao": "FITA ISOLANTE 20M",
+            "quantidade": 33,
+            "valorUnitario": 6.82,
+            "valorTotal": 22506
+          },
+          {
+            "descricao": "LAMPADA LED 9W BIVOLT",
+            "quantidade": 27,
+            "valorUnitario": 13,
+            "valorTotal": 35100
+          },
+          {
+            "descricao": "PAPEL TOALHA 2 ROLOS",
+            "quantidade": 8,
+            "valorUnitario": 9.26,
+            "valorTotal": 7408
+          },
+          {
+            "descricao": "QUEIJO MUSSARELA FATIADO",
+            "quantidade": 2.115,
+            "valorUnitario": 43.99,
+            "valorTotal": 9304
+          },
+          {
+            "descricao": "CADERNO UNIVERSITARIO 96 FLS",
+            "quantidade": 20,
+            "valorUnitario": 21.48,
+            "valorTotal": 42960
+          }
+        ]
+      },
+      "custoUsd": 0.0005597,
+      "latenciaMs": 1867
+    },
+    {
+      "id": "nota-10",
+      "formato": "danfe-pdf",
+      "esperado": {
+        "cnpjEmitente": "90107626000194",
+        "dataEmissao": "2026-02-20",
+        "valorTotal": 200768,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "FITA ISOLANTE 20M",
+            "quantidade": 16,
+            "valorUnitario": 8.3,
+            "valorTotal": 13280
+          },
+          {
+            "descricao": "OLEO DE SOJA 900ML",
+            "quantidade": 20,
+            "valorUnitario": 9.84,
+            "valorTotal": 19680
+          },
+          {
+            "descricao": "PAPEL TOALHA 2 ROLOS",
+            "quantidade": 39,
+            "valorUnitario": 9.17,
+            "valorTotal": 35763
+          },
+          {
+            "descricao": "PARAFUSO SEXTAVADO 1/4 X 2",
+            "quantidade": 36,
+            "valorUnitario": 36.36,
+            "valorTotal": 130896
+          },
+          {
+            "descricao": "BANANA PRATA",
+            "quantidade": 2.253,
+            "valorUnitario": 5.1,
+            "valorTotal": 1149
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "90107626000194",
+        "dataEmissao": "2026-02-20",
+        "valorTotal": 200768,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "FITA ISOLANTE 20M",
+            "quantidade": 16,
+            "valorUnitario": 8.3,
+            "valorTotal": 13280
+          },
+          {
+            "descricao": "OLEO DE SOJA 900ML",
+            "quantidade": 20,
+            "valorUnitario": 9.84,
+            "valorTotal": 19680
+          },
+          {
+            "descricao": "PAPEL TOALHA 2 ROLOS",
+            "quantidade": 39,
+            "valorUnitario": 9.17,
+            "valorTotal": 35763
+          },
+          {
+            "descricao": "PARAFUSO SEXTAVADO 1/4 X 2",
+            "quantidade": 36,
+            "valorUnitario": 36.36,
+            "valorTotal": 130896
+          },
+          {
+            "descricao": "BANANA PRATA",
+            "quantidade": 2.253,
+            "valorUnitario": 5.1,
+            "valorTotal": 1149
+          }
+        ]
+      },
+      "custoUsd": 0.0005225,
+      "latenciaMs": 2255
+    },
+    {
+      "id": "nota-11",
+      "formato": "danfe-foto",
+      "esperado": {
+        "cnpjEmitente": "67962508000141",
+        "dataEmissao": "2026-02-10",
+        "valorTotal": 8150,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "AGUA MINERAL 1,5L",
+            "quantidade": 25,
+            "valorUnitario": 3.26,
+            "valorTotal": 8150
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "67962508000141",
+        "dataEmissao": "2026-02-10",
+        "valorTotal": 8150,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "AGUA MINERAL 1,5L",
+            "quantidade": 25,
+            "valorUnitario": 3.26,
+            "valorTotal": 8150
+          }
+        ]
+      },
+      "custoUsd": 0.000313,
+      "latenciaMs": 1731
+    },
+    {
+      "id": "nota-12",
+      "formato": "danfe-foto",
+      "esperado": {
+        "cnpjEmitente": "42841121000106",
+        "dataEmissao": "2026-06-26",
+        "valorTotal": 218183,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "PARAFUSO SEXTAVADO 1/4 X 2",
+            "quantidade": 25,
+            "valorUnitario": 35.04,
+            "valorTotal": 87600
+          },
+          {
+            "descricao": "SABAO EM PO 1,6KG",
+            "quantidade": 5,
+            "valorUnitario": 23.87,
+            "valorTotal": 11935
+          },
+          {
+            "descricao": "MOUSE OPTICO USB",
+            "quantidade": 27,
+            "valorUnitario": 37.59,
+            "valorTotal": 101493
+          },
+          {
+            "descricao": "PAPEL TOALHA 2 ROLOS",
+            "quantidade": 7,
+            "valorUnitario": 8.86,
+            "valorTotal": 6202
+          },
+          {
+            "descricao": "QUEIJO MUSSARELA FATIADO",
+            "quantidade": 0.749,
+            "valorUnitario": 48.9,
+            "valorTotal": 3663
+          },
+          {
+            "descricao": "ACUCAR CRISTAL 5KG",
+            "quantidade": 3,
+            "valorUnitario": 24.3,
+            "valorTotal": 7290
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "42841121000106",
+        "dataEmissao": "2026-06-26",
+        "valorTotal": 218183,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "PARAFUSO SEXTAVADO 1/4 X 2",
+            "quantidade": 25,
+            "valorUnitario": 35.04,
+            "valorTotal": 87600
+          },
+          {
+            "descricao": "SABAO EM PO 1,6KG",
+            "quantidade": 5,
+            "valorUnitario": 23.87,
+            "valorTotal": 11935
+          },
+          {
+            "descricao": "MOUSE OPTICO USB",
+            "quantidade": 27,
+            "valorUnitario": 37.59,
+            "valorTotal": 101493
+          },
+          {
+            "descricao": "PAPEL TOALHA 2 ROLOS",
+            "quantidade": 7,
+            "valorUnitario": 8.86,
+            "valorTotal": 6202
+          },
+          {
+            "descricao": "QUEIJO MUSSARELA FATIADO",
+            "quantidade": 0.749,
+            "valorUnitario": 48.9,
+            "valorTotal": 3663
+          },
+          {
+            "descricao": "ACUCAR CRISTAL 5KG",
+            "quantidade": 3,
+            "valorUnitario": 24.3,
+            "valorTotal": 7290
+          }
+        ]
+      },
+      "custoUsd": 0.0004765,
+      "latenciaMs": 2280
+    },
+    {
+      "id": "nota-13",
+      "formato": "danfe-foto",
+      "esperado": {
+        "cnpjEmitente": "01863199000144",
+        "dataEmissao": "2025-12-03",
+        "valorTotal": 119223,
+        "desconto": 4726,
+        "frete": 5788,
+        "itens": [
+          {
+            "descricao": "PAPEL A4 75G RESMA 500 FLS",
+            "quantidade": 12,
+            "valorUnitario": 32.35,
+            "valorTotal": 38820
+          },
+          {
+            "descricao": "BANANA PRATA",
+            "quantidade": 1.422,
+            "valorUnitario": 8.28,
+            "valorTotal": 1177
+          },
+          {
+            "descricao": "CANETA ESFEROGRAFICA AZUL",
+            "quantidade": 16,
+            "valorUnitario": 1.21,
+            "valorTotal": 1936
+          },
+          {
+            "descricao": "PARAFUSO SEXTAVADO 1/4 X 2",
+            "quantidade": 34,
+            "valorUnitario": 22.42,
+            "valorTotal": 76228
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "01863199000144",
+        "dataEmissao": "2025-12-03",
+        "valorTotal": 119223,
+        "desconto": 4726,
+        "frete": 5788,
+        "itens": [
+          {
+            "descricao": "PAPEL A4 75G RESMA 500 FLS",
+            "quantidade": 12,
+            "valorUnitario": 32.35,
+            "valorTotal": 38820
+          },
+          {
+            "descricao": "BANANA PRATA",
+            "quantidade": 1.422,
+            "valorUnitario": 8.28,
+            "valorTotal": 1177
+          },
+          {
+            "descricao": "CANETA ESFEROGRAFICA AZUL",
+            "quantidade": 16,
+            "valorUnitario": 1.21,
+            "valorTotal": 1936
+          },
+          {
+            "descricao": "PARAFUSO SEXTAVADO 1/4 X 2",
+            "quantidade": 34,
+            "valorUnitario": 22.42,
+            "valorTotal": 76228
+          }
+        ]
+      },
+      "custoUsd": 0.0004153,
+      "latenciaMs": 2152
+    },
+    {
+      "id": "nota-14",
+      "formato": "danfe-foto",
+      "esperado": {
+        "cnpjEmitente": "35731498000147",
+        "dataEmissao": "2026-08-30",
+        "valorTotal": 98594,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "PAO FRANCES",
+            "quantidade": 2.444,
+            "valorUnitario": 19.46,
+            "valorTotal": 4756
+          },
+          {
+            "descricao": "ACUCAR CRISTAL 5KG",
+            "quantidade": 34,
+            "valorUnitario": 24.64,
+            "valorTotal": 83776
+          },
+          {
+            "descricao": "OLEO DE SOJA 900ML",
+            "quantidade": 13,
+            "valorUnitario": 7.74,
+            "valorTotal": 10062
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "35731498000147",
+        "dataEmissao": "2026-08-30",
+        "valorTotal": 98594,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "PAO FRANCES",
+            "quantidade": 2.444,
+            "valorUnitario": 19.46,
+            "valorTotal": 4756
+          },
+          {
+            "descricao": "ACUCAR CRISTAL 5KG",
+            "quantidade": 34,
+            "valorUnitario": 24.64,
+            "valorTotal": 83776
+          },
+          {
+            "descricao": "OLEO DE SOJA 900ML",
+            "quantidade": 13,
+            "valorUnitario": 7.74,
+            "valorTotal": 10062
+          }
+        ]
+      },
+      "custoUsd": 0.00037319999999999996,
+      "latenciaMs": 1393
+    },
+    {
+      "id": "nota-15",
+      "formato": "danfe-foto",
+      "esperado": {
+        "cnpjEmitente": "03898365000173",
+        "dataEmissao": "2026-03-28",
+        "valorTotal": 47303,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "SABAO EM PO 1,6KG",
+            "quantidade": 9,
+            "valorUnitario": 27.43,
+            "valorTotal": 24687
+          },
+          {
+            "descricao": "FEIJAO CARIOCA 1KG",
+            "quantidade": 22,
+            "valorUnitario": 10.28,
+            "valorTotal": 22616
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "03898365000173",
+        "dataEmissao": "2026-03-28",
+        "valorTotal": 47303,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "SABAO EM PO 1,6KG",
+            "quantidade": 9,
+            "valorUnitario": 27.43,
+            "valorTotal": 24687
+          },
+          {
+            "descricao": "FEIJAO CARIOCA 1KG",
+            "quantidade": 22,
+            "valorUnitario": 10.28,
+            "valorTotal": 22616
+          }
+        ]
+      },
+      "custoUsd": 0.00034460000000000003,
+      "latenciaMs": 1366
+    },
+    {
+      "id": "nota-16",
+      "formato": "danfe-foto",
+      "esperado": {
+        "cnpjEmitente": "32854564000188",
+        "dataEmissao": "2026-08-18",
+        "valorTotal": 101985,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "ARROZ TIPO 1 5KG",
+            "quantidade": 39,
+            "valorUnitario": 26.15,
+            "valorTotal": 101985
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "32854564000188",
+        "dataEmissao": "2026-08-18",
+        "valorTotal": 101985,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "ARROZ TIPO 1 5KG",
+            "quantidade": 39,
+            "valorUnitario": 26.15,
+            "valorTotal": 101985
+          }
+        ]
+      },
+      "custoUsd": 0.0003145,
+      "latenciaMs": 3310
+    },
+    {
+      "id": "nota-17",
+      "formato": "danfe-foto",
+      "esperado": {
+        "cnpjEmitente": "41253585000139",
+        "dataEmissao": "2026-04-07",
+        "valorTotal": 158029,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "CABO HDMI 2.0 1,5M",
+            "quantidade": 35,
+            "valorUnitario": 30.73,
+            "valorTotal": 107555
+          },
+          {
+            "descricao": "PASTA SUSPENSA KRAFT",
+            "quantidade": 25,
+            "valorUnitario": 3.86,
+            "valorTotal": 9650
+          },
+          {
+            "descricao": "BANANA PRATA",
+            "quantidade": 0.339,
+            "valorUnitario": 6.58,
+            "valorTotal": 223
+          },
+          {
+            "descricao": "PAPEL TOALHA 2 ROLOS",
+            "quantidade": 29,
+            "valorUnitario": 9.73,
+            "valorTotal": 28217
+          },
+          {
+            "descricao": "ACUCAR CRISTAL 5KG",
+            "quantidade": 6,
+            "valorUnitario": 20.64,
+            "valorTotal": 12384
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "41253585000139",
+        "dataEmissao": "2026-04-07",
+        "valorTotal": 158029,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "CABO HDMI 2.0 1,5M",
+            "quantidade": 35,
+            "valorUnitario": 30.73,
+            "valorTotal": 107555
+          },
+          {
+            "descricao": "PASTA SUSPENSA KRAFT",
+            "quantidade": 25,
+            "valorUnitario": 3.86,
+            "valorTotal": 9650
+          },
+          {
+            "descricao": "BANANA PRATA",
+            "quantidade": 0.339,
+            "valorUnitario": 6.58,
+            "valorTotal": 223
+          },
+          {
+            "descricao": "PAPEL TOALHA 2 ROLOS",
+            "quantidade": 29,
+            "valorUnitario": 9.73,
+            "valorTotal": 28217
+          },
+          {
+            "descricao": "ACUCAR CRISTAL 5KG",
+            "quantidade": 6,
+            "valorUnitario": 20.64,
+            "valorTotal": 12384
+          }
+        ]
+      },
+      "custoUsd": 0.00043940000000000006,
+      "latenciaMs": 2743
+    },
+    {
+      "id": "nota-18",
+      "formato": "danfe-foto",
+      "esperado": {
+        "cnpjEmitente": "9V3JLNKR000105",
+        "dataEmissao": "2025-11-10",
+        "valorTotal": 557185,
+        "desconto": 11336,
+        "frete": 1729,
+        "itens": [
+          {
+            "descricao": "MOUSE OPTICO USB",
+            "quantidade": 14,
+            "valorUnitario": 77.25,
+            "valorTotal": 108150
+          },
+          {
+            "descricao": "PAO FRANCES",
+            "quantidade": 1.772,
+            "valorUnitario": 17.08,
+            "valorTotal": 3027
+          },
+          {
+            "descricao": "PAPEL TOALHA 2 ROLOS",
+            "quantidade": 27,
+            "valorUnitario": 8.5,
+            "valorTotal": 22950
+          },
+          {
+            "descricao": "SABAO EM PO 1,6KG",
+            "quantidade": 29,
+            "valorUnitario": 28.25,
+            "valorTotal": 81925
+          },
+          {
+            "descricao": "PASTA SUSPENSA KRAFT",
+            "quantidade": 20,
+            "valorUnitario": 2.13,
+            "valorTotal": 4260
+          },
+          {
+            "descricao": "TONER COMPATIVEL HP 85A",
+            "quantidade": 15,
+            "valorUnitario": 88.3,
+            "valorTotal": 132450
+          },
+          {
+            "descricao": "GRAMPEADOR DE MESA 26/6",
+            "quantidade": 25,
+            "valorUnitario": 36.85,
+            "valorTotal": 92125
+          },
+          {
+            "descricao": "ARROZ TIPO 1 5KG",
+            "quantidade": 35,
+            "valorUnitario": 34.83,
+            "valorTotal": 121905
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "9V3JLNKR000105",
+        "dataEmissao": "2025-11-10",
+        "valorTotal": 557185,
+        "desconto": 11336,
+        "frete": 1729,
+        "itens": [
+          {
+            "descricao": "MOUSE OPTICO USB",
+            "quantidade": 14,
+            "valorUnitario": 77.25,
+            "valorTotal": 108150
+          },
+          {
+            "descricao": "PAO FRANCES",
+            "quantidade": 1.772,
+            "valorUnitario": 17.08,
+            "valorTotal": 3027
+          },
+          {
+            "descricao": "PAPEL TOALHA 2 ROLOS",
+            "quantidade": 27,
+            "valorUnitario": 8.5,
+            "valorTotal": 22950
+          },
+          {
+            "descricao": "SABAO EM PO 1,6KG",
+            "quantidade": 29,
+            "valorUnitario": 28.25,
+            "valorTotal": 81925
+          },
+          {
+            "descricao": "PASTA SUSPENSA KRAFT",
+            "quantidade": 20,
+            "valorUnitario": 2.13,
+            "valorTotal": 4260
+          },
+          {
+            "descricao": "TONER COMPATIVEL HP 85A",
+            "quantidade": 15,
+            "valorUnitario": 88.3,
+            "valorTotal": 132450
+          },
+          {
+            "descricao": "GRAMPEADOR DE MESA 26/6",
+            "quantidade": 25,
+            "valorUnitario": 36.85,
+            "valorTotal": 92125
+          },
+          {
+            "descricao": "ARROZ TIPO 1 5KG",
+            "quantidade": 35,
+            "valorUnitario": 34.83,
+            "valorTotal": 121905
+          }
+        ]
+      },
+      "custoUsd": 0.0010282,
+      "latenciaMs": 5707
+    },
+    {
+      "id": "nota-19",
+      "formato": "danfe-foto",
+      "esperado": {
+        "cnpjEmitente": "15116900000176",
+        "dataEmissao": "2026-09-25",
+        "valorTotal": 236946,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "FEIJAO CARIOCA 1KG",
+            "quantidade": 18,
+            "valorUnitario": 9.09,
+            "valorTotal": 16362
+          },
+          {
+            "descricao": "TECLADO ABNT2 USB",
+            "quantidade": 17,
+            "valorUnitario": 59.61,
+            "valorTotal": 101337
+          },
+          {
+            "descricao": "ARROZ TIPO 1 5KG",
+            "quantidade": 33,
+            "valorUnitario": 35.8,
+            "valorTotal": 118140
+          },
+          {
+            "descricao": "TOMATE ITALIANO",
+            "quantidade": 0.934,
+            "valorUnitario": 11.85,
+            "valorTotal": 1107
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "15116900000176",
+        "dataEmissao": "2026-09-25",
+        "valorTotal": 236946,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "FEIJAO CARIOCA 1KG",
+            "quantidade": 18,
+            "valorUnitario": 9.09,
+            "valorTotal": 16362
+          },
+          {
+            "descricao": "TECLADO ABNT2 USB",
+            "quantidade": 17,
+            "valorUnitario": 59.61,
+            "valorTotal": 101337
+          },
+          {
+            "descricao": "ARROZ TIPO 1 5KG",
+            "quantidade": 33,
+            "valorUnitario": 35.8,
+            "valorTotal": 118140
+          },
+          {
+            "descricao": "TOMATE ITALIANO",
+            "quantidade": 0.934,
+            "valorUnitario": 11.85,
+            "valorTotal": 1107
+          }
+        ]
+      },
+      "custoUsd": 0.0004068,
+      "latenciaMs": 1680
+    },
+    {
+      "id": "nota-20",
+      "formato": "danfe-foto",
+      "esperado": {
+        "cnpjEmitente": "32701929000134",
+        "dataEmissao": "2026-04-29",
+        "valorTotal": 537224,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "TINTA ACRILICA BRANCO 18L",
+            "quantidade": 18,
+            "valorUnitario": 281.49,
+            "valorTotal": 506682
+          },
+          {
+            "descricao": "FITA ISOLANTE 20M",
+            "quantidade": 38,
+            "valorUnitario": 5.21,
+            "valorTotal": 19798
+          },
+          {
+            "descricao": "DETERGENTE NEUTRO 500ML",
+            "quantidade": 22,
+            "valorUnitario": 2.64,
+            "valorTotal": 5808
+          },
+          {
+            "descricao": "CANETA ESFEROGRAFICA AZUL",
+            "quantidade": 8,
+            "valorUnitario": 2.71,
+            "valorTotal": 2168
+          },
+          {
+            "descricao": "PAPEL TOALHA 2 ROLOS",
+            "quantidade": 4,
+            "valorUnitario": 6.92,
+            "valorTotal": 2768
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "32701929000134",
+        "dataEmissao": "2026-04-29",
+        "valorTotal": 537224,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "TINTA ACRILICA BRANCO 18L",
+            "quantidade": 18,
+            "valorUnitario": 281.49,
+            "valorTotal": 506682
+          },
+          {
+            "descricao": "FITA ISOLANTE 20M",
+            "quantidade": 38,
+            "valorUnitario": 5.21,
+            "valorTotal": 19798
+          },
+          {
+            "descricao": "DETERGENTE NEUTRO 500ML",
+            "quantidade": 22,
+            "valorUnitario": 2.64,
+            "valorTotal": 5808
+          },
+          {
+            "descricao": "CANETA ESFEROGRAFICA AZUL",
+            "quantidade": 8,
+            "valorUnitario": 2.71,
+            "valorTotal": 2168
+          },
+          {
+            "descricao": "PAPEL TOALHA 2 ROLOS",
+            "quantidade": 4,
+            "valorUnitario": 6.92,
+            "valorTotal": 2768
+          }
+        ]
+      },
+      "custoUsd": 0.00044390000000000006,
+      "latenciaMs": 2004
+    },
+    {
+      "id": "nota-21",
+      "formato": "nfce-foto",
+      "esperado": {
+        "cnpjEmitente": "02080059000162",
+        "dataEmissao": "2025-12-08",
+        "valorTotal": 28933,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "LAMPADA LED 9W BIVOLT",
+            "quantidade": 3,
+            "valorUnitario": 10.83,
+            "valorTotal": 3249
+          },
+          {
+            "descricao": "QUEIJO MUSSARELA FATIADO",
+            "quantidade": 1.942,
+            "valorUnitario": 39.98,
+            "valorTotal": 7764
+          },
+          {
+            "descricao": "PARAFUSO SEXTAVADO 1/4 X 2",
+            "quantidade": 5,
+            "valorUnitario": 21.34,
+            "valorTotal": 10670
+          },
+          {
+            "descricao": "CADERNO UNIVERSITARIO 96 FLS",
+            "quantidade": 5,
+            "valorUnitario": 14.5,
+            "valorTotal": 7250
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "02080059000162",
+        "dataEmissao": "2025-12-08",
+        "valorTotal": 28933,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "LAMPADA LED 9W BIVOLT",
+            "quantidade": 3,
+            "valorUnitario": 10.83,
+            "valorTotal": 3249
+          },
+          {
+            "descricao": "QUEIJO MUSSARELA FATIADO",
+            "quantidade": 1.942,
+            "valorUnitario": 39.98,
+            "valorTotal": 7764
+          },
+          {
+            "descricao": "PARAFUSO SEXTAVADO 1/4 X 2",
+            "quantidade": 5,
+            "valorUnitario": 21.34,
+            "valorTotal": 10670
+          },
+          {
+            "descricao": "CADERNO UNIVERSITARIO 96 FLS",
+            "quantidade": 5,
+            "valorUnitario": 14.5,
+            "valorTotal": 7250
+          }
+        ]
+      },
+      "custoUsd": 0.0003488,
+      "latenciaMs": 1806
+    },
+    {
+      "id": "nota-22",
+      "formato": "nfce-foto",
+      "esperado": {
+        "cnpjEmitente": "94888716000110",
+        "dataEmissao": "2025-11-22",
+        "valorTotal": 102672,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "TONER COMPATIVEL HP 85A",
+            "quantidade": 6,
+            "valorUnitario": 96.37,
+            "valorTotal": 57822
+          },
+          {
+            "descricao": "TOMATE ITALIANO",
+            "quantidade": 0.494,
+            "valorUnitario": 6.71,
+            "valorTotal": 331
+          },
+          {
+            "descricao": "PASTA SUSPENSA KRAFT",
+            "quantidade": 6,
+            "valorUnitario": 3.31,
+            "valorTotal": 1986
+          },
+          {
+            "descricao": "CAFE TORRADO MOIDO 500G",
+            "quantidade": 2,
+            "valorUnitario": 26.92,
+            "valorTotal": 5384
+          },
+          {
+            "descricao": "TECLADO ABNT2 USB",
+            "quantidade": 4,
+            "valorUnitario": 71.21,
+            "valorTotal": 28484
+          },
+          {
+            "descricao": "CIMENTO CP II 50KG",
+            "quantidade": 1,
+            "valorUnitario": 32.19,
+            "valorTotal": 3219
+          },
+          {
+            "descricao": "PAPEL TOALHA 2 ROLOS",
+            "quantidade": 5,
+            "valorUnitario": 6.76,
+            "valorTotal": 3380
+          },
+          {
+            "descricao": "SABAO EM PO 1,6KG",
+            "quantidade": 1,
+            "valorUnitario": 20.66,
+            "valorTotal": 2066
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "94888716000110",
+        "dataEmissao": "2025-11-22",
+        "valorTotal": 102672,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "TONER COMPATIVEL HP 85A",
+            "quantidade": 6,
+            "valorUnitario": 96.37,
+            "valorTotal": 57822
+          },
+          {
+            "descricao": "TOMATE ITALIANO",
+            "quantidade": 0.494,
+            "valorUnitario": 6.71,
+            "valorTotal": 331
+          },
+          {
+            "descricao": "PASTA SUSPENSA KRAFT",
+            "quantidade": 6,
+            "valorUnitario": 3.31,
+            "valorTotal": 1986
+          },
+          {
+            "descricao": "CAFE TORRADO MOIDO 500G",
+            "quantidade": 2,
+            "valorUnitario": 26.92,
+            "valorTotal": 5384
+          },
+          {
+            "descricao": "TECLADO ABNT2 USB",
+            "quantidade": 4,
+            "valorUnitario": 71.21,
+            "valorTotal": 28484
+          },
+          {
+            "descricao": "CIMENTO CP II 50KG",
+            "quantidade": 1,
+            "valorUnitario": 32.19,
+            "valorTotal": 3219
+          },
+          {
+            "descricao": "PAPEL TOALHA 2 ROLOS",
+            "quantidade": 5,
+            "valorUnitario": 6.76,
+            "valorTotal": 3380
+          },
+          {
+            "descricao": "SABAO EM PO 1,6KG",
+            "quantidade": 1,
+            "valorUnitario": 20.66,
+            "valorTotal": 2066
+          }
+        ]
+      },
+      "custoUsd": 0.00046239999999999996,
+      "latenciaMs": 2405
+    },
+    {
+      "id": "nota-23",
+      "formato": "nfce-foto",
+      "esperado": {
+        "cnpjEmitente": "97984542000188",
+        "dataEmissao": "2026-03-26",
+        "valorTotal": 19549,
+        "desconto": 1471,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "PAPEL A4 75G RESMA 500 FLS",
+            "quantidade": 3,
+            "valorUnitario": 35.2,
+            "valorTotal": 10560
+          },
+          {
+            "descricao": "CAFE TORRADO MOIDO 500G",
+            "quantidade": 2,
+            "valorUnitario": 28.29,
+            "valorTotal": 5658
+          },
+          {
+            "descricao": "FEIJAO CARIOCA 1KG",
+            "quantidade": 2,
+            "valorUnitario": 9.21,
+            "valorTotal": 1842
+          },
+          {
+            "descricao": "OLEO DE SOJA 900ML",
+            "quantidade": 4,
+            "valorUnitario": 7.4,
+            "valorTotal": 2960
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "97984542000188",
+        "dataEmissao": "2026-03-26",
+        "valorTotal": 19549,
+        "desconto": 1471,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "001 PAPEL A4 75G RESMA 500 FLS",
+            "quantidade": 3,
+            "valorUnitario": 35.2,
+            "valorTotal": 10560
+          },
+          {
+            "descricao": "002 CAFE TORRADO MOIDO 500G",
+            "quantidade": 2,
+            "valorUnitario": 28.29,
+            "valorTotal": 5658
+          },
+          {
+            "descricao": "003 FEIJAO CARIOCA 1KG",
+            "quantidade": 2,
+            "valorUnitario": 9.21,
+            "valorTotal": 1842
+          },
+          {
+            "descricao": "004 OLEO DE SOJA 900ML",
+            "quantidade": 4,
+            "valorUnitario": 7.4,
+            "valorTotal": 2960
+          }
+        ]
+      },
+      "custoUsd": 0.00034960000000000004,
+      "latenciaMs": 1531
+    },
+    {
+      "id": "nota-24",
+      "formato": "nfce-foto",
+      "esperado": {
+        "cnpjEmitente": "14413473000125",
+        "dataEmissao": "2026-01-05",
+        "valorTotal": 108160,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "LAMPADA LED 9W BIVOLT",
+            "quantidade": 3,
+            "valorUnitario": 6.79,
+            "valorTotal": 2037
+          },
+          {
+            "descricao": "SABAO EM PO 1,6KG",
+            "quantidade": 4,
+            "valorUnitario": 22.69,
+            "valorTotal": 9076
+          },
+          {
+            "descricao": "CABO HDMI 2.0 1,5M",
+            "quantidade": 2,
+            "valorUnitario": 34.73,
+            "valorTotal": 6946
+          },
+          {
+            "descricao": "PAPEL A4 75G RESMA 500 FLS",
+            "quantidade": 1,
+            "valorUnitario": 28.34,
+            "valorTotal": 2834
+          },
+          {
+            "descricao": "TECLADO ABNT2 USB",
+            "quantidade": 5,
+            "valorUnitario": 61.8,
+            "valorTotal": 30900
+          },
+          {
+            "descricao": "QUEIJO MUSSARELA FATIADO",
+            "quantidade": 2.198,
+            "valorUnitario": 43.08,
+            "valorTotal": 9469
+          },
+          {
+            "descricao": "LEITE INTEGRAL 1L",
+            "quantidade": 3,
+            "valorUnitario": 6.39,
+            "valorTotal": 1917
+          },
+          {
+            "descricao": "PASTA SUSPENSA KRAFT",
+            "quantidade": 1,
+            "valorUnitario": 4.37,
+            "valorTotal": 437
+          },
+          {
+            "descricao": "TONER COMPATIVEL HP 85A",
+            "quantidade": 4,
+            "valorUnitario": 111.36,
+            "valorTotal": 44544
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "14413473000125",
+        "dataEmissao": "2026-01-05",
+        "valorTotal": 108160,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "LAMPADA LED 9W BIVOLT",
+            "quantidade": 3,
+            "valorUnitario": 6.79,
+            "valorTotal": 2037
+          },
+          {
+            "descricao": "SABAO EM PO 1,6KG",
+            "quantidade": 4,
+            "valorUnitario": 22.69,
+            "valorTotal": 9076
+          },
+          {
+            "descricao": "CABO HDMI 2.0 1,5M",
+            "quantidade": 2,
+            "valorUnitario": 34.73,
+            "valorTotal": 6946
+          },
+          {
+            "descricao": "PAPEL A4 75G RESMA 500 FLS",
+            "quantidade": 1,
+            "valorUnitario": 28.34,
+            "valorTotal": 2834
+          },
+          {
+            "descricao": "TECLADO ABNT2 USB",
+            "quantidade": 5,
+            "valorUnitario": 61.8,
+            "valorTotal": 30900
+          },
+          {
+            "descricao": "QUEIJO MUSSARELA FATIADO",
+            "quantidade": 2.198,
+            "valorUnitario": 43.08,
+            "valorTotal": 9469
+          },
+          {
+            "descricao": "LEITE INTEGRAL 1L",
+            "quantidade": 3,
+            "valorUnitario": 6.39,
+            "valorTotal": 1917
+          },
+          {
+            "descricao": "PASTA SUSPENSA KRAFT",
+            "quantidade": 1,
+            "valorUnitario": 4.37,
+            "valorTotal": 437
+          },
+          {
+            "descricao": "TONER COMPATIVEL HP 85A",
+            "quantidade": 4,
+            "valorUnitario": 111.36,
+            "valorTotal": 44544
+          }
+        ]
+      },
+      "custoUsd": 0.0004995,
+      "latenciaMs": 2495
+    },
+    {
+      "id": "nota-25",
+      "formato": "nfce-foto",
+      "esperado": {
+        "cnpjEmitente": "22498412000136",
+        "dataEmissao": "2025-11-02",
+        "valorTotal": 207099,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "AGUA MINERAL 1,5L",
+            "quantidade": 6,
+            "valorUnitario": 3.31,
+            "valorTotal": 1986
+          },
+          {
+            "descricao": "LAMPADA LED 9W BIVOLT",
+            "quantidade": 4,
+            "valorUnitario": 11.23,
+            "valorTotal": 4492
+          },
+          {
+            "descricao": "SABAO EM PO 1,6KG",
+            "quantidade": 1,
+            "valorUnitario": 25.21,
+            "valorTotal": 2521
+          },
+          {
+            "descricao": "TINTA ACRILICA BRANCO 18L",
+            "quantidade": 6,
+            "valorUnitario": 283.63,
+            "valorTotal": 170178
+          },
+          {
+            "descricao": "LEITE INTEGRAL 1L",
+            "quantidade": 4,
+            "valorUnitario": 4.61,
+            "valorTotal": 1844
+          },
+          {
+            "descricao": "PASTA SUSPENSA KRAFT",
+            "quantidade": 5,
+            "valorUnitario": 3.98,
+            "valorTotal": 1990
+          },
+          {
+            "descricao": "ARROZ TIPO 1 5KG",
+            "quantidade": 3,
+            "valorUnitario": 25.39,
+            "valorTotal": 7617
+          },
+          {
+            "descricao": "PAO FRANCES",
+            "quantidade": 0.475,
+            "valorUnitario": 17.19,
+            "valorTotal": 817
+          },
+          {
+            "descricao": "ACUCAR CRISTAL 5KG",
+            "quantidade": 6,
+            "valorUnitario": 26.09,
+            "valorTotal": 15654
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "22498412000136",
+        "dataEmissao": "2025-11-02",
+        "valorTotal": 207099,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "AGUA MINERAL 1,5L",
+            "quantidade": 6,
+            "valorUnitario": 3.31,
+            "valorTotal": 1986
+          },
+          {
+            "descricao": "LAMPADA LED 9W BIVOLT",
+            "quantidade": 4,
+            "valorUnitario": 11.23,
+            "valorTotal": 4492
+          },
+          {
+            "descricao": "SABAO EM PO 1,6KG",
+            "quantidade": 1,
+            "valorUnitario": 25.21,
+            "valorTotal": 2521
+          },
+          {
+            "descricao": "TINTA ACRILICA BRANCO 18L",
+            "quantidade": 6,
+            "valorUnitario": 283.63,
+            "valorTotal": 170178
+          },
+          {
+            "descricao": "LEITE INTEGRAL 1L",
+            "quantidade": 4,
+            "valorUnitario": 4.61,
+            "valorTotal": 1844
+          },
+          {
+            "descricao": "PASTA SUSPENSA KRAFT",
+            "quantidade": 5,
+            "valorUnitario": 3.98,
+            "valorTotal": 1990
+          },
+          {
+            "descricao": "ARROZ TIPO 1 5KG",
+            "quantidade": 3,
+            "valorUnitario": 25.39,
+            "valorTotal": 7617
+          },
+          {
+            "descricao": "PAO FRANCES",
+            "quantidade": 0.475,
+            "valorUnitario": 17.19,
+            "valorTotal": 817
+          },
+          {
+            "descricao": "ACUCAR CRISTAL 5KG",
+            "quantidade": 6,
+            "valorUnitario": 26.09,
+            "valorTotal": 15654
+          }
+        ]
+      },
+      "custoUsd": 0.000494,
+      "latenciaMs": 2498
+    },
+    {
+      "id": "nota-26",
+      "formato": "nfce-foto",
+      "esperado": {
+        "cnpjEmitente": "22854227000137",
+        "dataEmissao": "2026-07-26",
+        "valorTotal": 143712,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "TOMATE ITALIANO",
+            "quantidade": 2.137,
+            "valorUnitario": 9.2,
+            "valorTotal": 1966
+          },
+          {
+            "descricao": "CANETA ESFEROGRAFICA AZUL",
+            "quantidade": 1,
+            "valorUnitario": 3.45,
+            "valorTotal": 345
+          },
+          {
+            "descricao": "CAFE TORRADO MOIDO 500G",
+            "quantidade": 6,
+            "valorUnitario": 27.33,
+            "valorTotal": 16398
+          },
+          {
+            "descricao": "FITA ISOLANTE 20M",
+            "quantidade": 3,
+            "valorUnitario": 10.01,
+            "valorTotal": 3003
+          },
+          {
+            "descricao": "MOUSE OPTICO USB",
+            "quantidade": 2,
+            "valorUnitario": 57.59,
+            "valorTotal": 11518
+          },
+          {
+            "descricao": "QUEIJO MUSSARELA FATIADO",
+            "quantidade": 1.906,
+            "valorUnitario": 52.02,
+            "valorTotal": 9915
+          },
+          {
+            "descricao": "BANANA PRATA",
+            "quantidade": 0.222,
+            "valorUnitario": 5.02,
+            "valorTotal": 111
+          },
+          {
+            "descricao": "PASTA SUSPENSA KRAFT",
+            "quantidade": 2,
+            "valorUnitario": 3.9,
+            "valorTotal": 780
+          },
+          {
+            "descricao": "TECLADO ABNT2 USB",
+            "quantidade": 5,
+            "valorUnitario": 123.16,
+            "valorTotal": 61580
+          },
+          {
+            "descricao": "GRAMPEADOR DE MESA 26/6",
+            "quantidade": 5,
+            "valorUnitario": 40.36,
+            "valorTotal": 20180
+          },
+          {
+            "descricao": "PARAFUSO SEXTAVADO 1/4 X 2",
+            "quantidade": 6,
+            "valorUnitario": 22.01,
+            "valorTotal": 13206
+          },
+          {
+            "descricao": "FEIJAO CARIOCA 1KG",
+            "quantidade": 5,
+            "valorUnitario": 9.42,
+            "valorTotal": 4710
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "22854227000137",
+        "dataEmissao": "2026-07-26",
+        "valorTotal": 143712,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "TOMATE ITALIANO",
+            "quantidade": 2.137,
+            "valorUnitario": 9.2,
+            "valorTotal": 1966
+          },
+          {
+            "descricao": "CANETA ESFEROGRAFICA AZUL",
+            "quantidade": 1,
+            "valorUnitario": 3.45,
+            "valorTotal": 345
+          },
+          {
+            "descricao": "CAFE TORRADO MOIDO 500G",
+            "quantidade": 6,
+            "valorUnitario": 27.33,
+            "valorTotal": 16398
+          },
+          {
+            "descricao": "FITA ISOLANTE 20M",
+            "quantidade": 3,
+            "valorUnitario": 10.01,
+            "valorTotal": 3003
+          },
+          {
+            "descricao": "MOUSE OPTICO USB",
+            "quantidade": 2,
+            "valorUnitario": 57.59,
+            "valorTotal": 11518
+          },
+          {
+            "descricao": "QUEIJO MUSSARELA FATIADO",
+            "quantidade": 1.906,
+            "valorUnitario": 52.02,
+            "valorTotal": 9915
+          },
+          {
+            "descricao": "BANANA PRATA",
+            "quantidade": 0.222,
+            "valorUnitario": 5.02,
+            "valorTotal": 111
+          },
+          {
+            "descricao": "PASTA SUSPENSA KRAFT",
+            "quantidade": 2,
+            "valorUnitario": 3.9,
+            "valorTotal": 780
+          },
+          {
+            "descricao": "TECLADO ABNT2 USB",
+            "quantidade": 5,
+            "valorUnitario": 123.16,
+            "valorTotal": 61580
+          },
+          {
+            "descricao": "GRAMPEADOR DE MESA 26/6",
+            "quantidade": 5,
+            "valorUnitario": 40.36,
+            "valorTotal": 20180
+          },
+          {
+            "descricao": "PARAFUSO SEXTAVADO 1/4 X 2",
+            "quantidade": 6,
+            "valorUnitario": 22.01,
+            "valorTotal": 13206
+          },
+          {
+            "descricao": "FEIJAO CARIOCA 1KG",
+            "quantidade": 5,
+            "valorUnitario": 9.42,
+            "valorTotal": 4710
+          }
+        ]
+      },
+      "custoUsd": 0.000591,
+      "latenciaMs": 2558
+    },
+    {
+      "id": "nota-27",
+      "formato": "nfce-foto",
+      "esperado": {
+        "cnpjEmitente": "46086663000171",
+        "dataEmissao": "2026-09-20",
+        "valorTotal": 82242,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "TECLADO ABNT2 USB",
+            "quantidade": 2,
+            "valorUnitario": 74.17,
+            "valorTotal": 14834
+          },
+          {
+            "descricao": "OLEO DE SOJA 900ML",
+            "quantidade": 1,
+            "valorUnitario": 9.67,
+            "valorTotal": 967
+          },
+          {
+            "descricao": "AGUA MINERAL 1,5L",
+            "quantidade": 2,
+            "valorUnitario": 3.85,
+            "valorTotal": 770
+          },
+          {
+            "descricao": "SABAO EM PO 1,6KG",
+            "quantidade": 5,
+            "valorUnitario": 27.01,
+            "valorTotal": 13505
+          },
+          {
+            "descricao": "TINTA ACRILICA BRANCO 18L",
+            "quantidade": 2,
+            "valorUnitario": 212.33,
+            "valorTotal": 42466
+          },
+          {
+            "descricao": "GRAMPEADOR DE MESA 26/6",
+            "quantidade": 5,
+            "valorUnitario": 19.4,
+            "valorTotal": 9700
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "46086663000171",
+        "dataEmissao": "2026-09-20",
+        "valorTotal": 82242,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "TECLADO ABNT2 USB",
+            "quantidade": 2,
+            "valorUnitario": 74.17,
+            "valorTotal": 14834
+          },
+          {
+            "descricao": "OLEO DE SOJA 900ML",
+            "quantidade": 1,
+            "valorUnitario": 9.67,
+            "valorTotal": 967
+          },
+          {
+            "descricao": "AGUA MINERAL 1,5L",
+            "quantidade": 2,
+            "valorUnitario": 3.85,
+            "valorTotal": 770
+          },
+          {
+            "descricao": "SABAO EM PO 1,6KG",
+            "quantidade": 5,
+            "valorUnitario": 27.01,
+            "valorTotal": 13505
+          },
+          {
+            "descricao": "TINTA ACRILICA BRANCO 18L",
+            "quantidade": 2,
+            "valorUnitario": 212.33,
+            "valorTotal": 42466
+          },
+          {
+            "descricao": "GRAMPEADOR DE MESA 26/6",
+            "quantidade": 5,
+            "valorUnitario": 19.4,
+            "valorTotal": 9700
+          }
+        ]
+      },
+      "custoUsd": 0.00039920000000000005,
+      "latenciaMs": 1912
+    },
+    {
+      "id": "nota-28",
+      "formato": "nfce-foto",
+      "esperado": {
+        "cnpjEmitente": "9QN0MVXT000114",
+        "dataEmissao": "2026-01-20",
+        "valorTotal": 75820,
+        "desconto": 7499,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "LEITE INTEGRAL 1L",
+            "quantidade": 2,
+            "valorUnitario": 5.11,
+            "valorTotal": 1022
+          },
+          {
+            "descricao": "PAPEL A4 75G RESMA 500 FLS",
+            "quantidade": 5,
+            "valorUnitario": 35.79,
+            "valorTotal": 17895
+          },
+          {
+            "descricao": "FITA ISOLANTE 20M",
+            "quantidade": 1,
+            "valorUnitario": 9.32,
+            "valorTotal": 932
+          },
+          {
+            "descricao": "ACUCAR CRISTAL 5KG",
+            "quantidade": 3,
+            "valorUnitario": 27.09,
+            "valorTotal": 8127
+          },
+          {
+            "descricao": "TINTA ACRILICA BRANCO 18L",
+            "quantidade": 1,
+            "valorUnitario": 319.39,
+            "valorTotal": 31939
+          },
+          {
+            "descricao": "QUEIJO MUSSARELA FATIADO",
+            "quantidade": 1.765,
+            "valorUnitario": 43.35,
+            "valorTotal": 7651
+          },
+          {
+            "descricao": "OLEO DE SOJA 900ML",
+            "quantidade": 1,
+            "valorUnitario": 9.91,
+            "valorTotal": 991
+          },
+          {
+            "descricao": "CABO HDMI 2.0 1,5M",
+            "quantidade": 3,
+            "valorUnitario": 35.31,
+            "valorTotal": 10593
+          },
+          {
+            "descricao": "LAMPADA LED 9W BIVOLT",
+            "quantidade": 2,
+            "valorUnitario": 13.72,
+            "valorTotal": 2744
+          },
+          {
+            "descricao": "CANETA ESFEROGRAFICA AZUL",
+            "quantidade": 5,
+            "valorUnitario": 2.85,
+            "valorTotal": 1425
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "9QN0MVXT000114",
+        "dataEmissao": "2026-01-20",
+        "valorTotal": 83319,
+        "desconto": 7499,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "LEITE INTEGRAL 1L",
+            "quantidade": 2,
+            "valorUnitario": 5.11,
+            "valorTotal": 1022
+          },
+          {
+            "descricao": "PAPEL A4 75G RESMA 500 FLS",
+            "quantidade": 5,
+            "valorUnitario": 35.79,
+            "valorTotal": 17895
+          },
+          {
+            "descricao": "FITA ISOLANTE 20M",
+            "quantidade": 1,
+            "valorUnitario": 9.32,
+            "valorTotal": 932
+          },
+          {
+            "descricao": "ACUCAR CRISTAL 5KG",
+            "quantidade": 3,
+            "valorUnitario": 27.09,
+            "valorTotal": 8127
+          },
+          {
+            "descricao": "TINTA ACRILICA BRANCO 18L",
+            "quantidade": 1,
+            "valorUnitario": 319.39,
+            "valorTotal": 31939
+          },
+          {
+            "descricao": "QUEIJO MUSSARELA FATIADO",
+            "quantidade": 1.765,
+            "valorUnitario": 43.35,
+            "valorTotal": 7651
+          },
+          {
+            "descricao": "OLEO DE SOJA 900ML",
+            "quantidade": 1,
+            "valorUnitario": 9.91,
+            "valorTotal": 991
+          },
+          {
+            "descricao": "CABO HDMI 2.0 1,5M",
+            "quantidade": 3,
+            "valorUnitario": 35.31,
+            "valorTotal": 10593
+          },
+          {
+            "descricao": "LAMPADA LED 9W BIVOLT",
+            "quantidade": 2,
+            "valorUnitario": 13.72,
+            "valorTotal": 2744
+          },
+          {
+            "descricao": "CANETA ESFEROGRAFICA AZUL",
+            "quantidade": 5,
+            "valorUnitario": 2.85,
+            "valorTotal": 1425
+          }
+        ]
+      },
+      "custoUsd": 0.0005376000000000001,
+      "latenciaMs": 2609
+    },
+    {
+      "id": "nota-29",
+      "formato": "nfce-foto",
+      "esperado": {
+        "cnpjEmitente": "39328424000115",
+        "dataEmissao": "2025-10-17",
+        "valorTotal": 28658,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "CIMENTO CP II 50KG",
+            "quantidade": 1,
+            "valorUnitario": 41.03,
+            "valorTotal": 4103
+          },
+          {
+            "descricao": "ARROZ TIPO 1 5KG",
+            "quantidade": 3,
+            "valorUnitario": 30.87,
+            "valorTotal": 9261
+          },
+          {
+            "descricao": "TOMATE ITALIANO",
+            "quantidade": 0.435,
+            "valorUnitario": 10.4,
+            "valorTotal": 452
+          },
+          {
+            "descricao": "BANANA PRATA",
+            "quantidade": 1.832,
+            "valorUnitario": 8.78,
+            "valorTotal": 1608
+          },
+          {
+            "descricao": "LEITE INTEGRAL 1L",
+            "quantidade": 4,
+            "valorUnitario": 4.95,
+            "valorTotal": 1980
+          },
+          {
+            "descricao": "PARAFUSO SEXTAVADO 1/4 X 2",
+            "quantidade": 4,
+            "valorUnitario": 25.66,
+            "valorTotal": 10264
+          },
+          {
+            "descricao": "LAMPADA LED 9W BIVOLT",
+            "quantidade": 1,
+            "valorUnitario": 9.9,
+            "valorTotal": 990
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "39328424000115",
+        "dataEmissao": "2025-10-17",
+        "valorTotal": 28658,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "CIMENTO CP II 50KG",
+            "quantidade": 1,
+            "valorUnitario": 41.03,
+            "valorTotal": 4103
+          },
+          {
+            "descricao": "ARROZ TIPO 1 5KG",
+            "quantidade": 3,
+            "valorUnitario": 30.87,
+            "valorTotal": 9261
+          },
+          {
+            "descricao": "TOMATE ITALIANO",
+            "quantidade": 0.435,
+            "valorUnitario": 10.4,
+            "valorTotal": 452
+          },
+          {
+            "descricao": "BANANA PRATA",
+            "quantidade": 1.832,
+            "valorUnitario": 8.78,
+            "valorTotal": 1608
+          },
+          {
+            "descricao": "LEITE INTEGRAL 1L",
+            "quantidade": 4,
+            "valorUnitario": 4.95,
+            "valorTotal": 1980
+          },
+          {
+            "descricao": "PARAFUSO SEXTAVADO 1/4 X 2",
+            "quantidade": 4,
+            "valorUnitario": 25.66,
+            "valorTotal": 10264
+          },
+          {
+            "descricao": "LAMPADA LED 9W BIVOLT",
+            "quantidade": 1,
+            "valorUnitario": 9.9,
+            "valorTotal": 990
+          }
+        ]
+      },
+      "custoUsd": 0.0004303,
+      "latenciaMs": 2509
+    },
+    {
+      "id": "nota-30",
+      "formato": "nfce-foto",
+      "esperado": {
+        "cnpjEmitente": "01171838000100",
+        "dataEmissao": "2025-11-10",
+        "valorTotal": 28116,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "CABO HDMI 2.0 1,5M",
+            "quantidade": 4,
+            "valorUnitario": 30.96,
+            "valorTotal": 12384
+          },
+          {
+            "descricao": "CANETA ESFEROGRAFICA AZUL",
+            "quantidade": 1,
+            "valorUnitario": 3.5,
+            "valorTotal": 350
+          },
+          {
+            "descricao": "ACUCAR CRISTAL 5KG",
+            "quantidade": 4,
+            "valorUnitario": 28.69,
+            "valorTotal": 11476
+          },
+          {
+            "descricao": "ARROZ TIPO 1 5KG",
+            "quantidade": 1,
+            "valorUnitario": 36.13,
+            "valorTotal": 3613
+          },
+          {
+            "descricao": "TOMATE ITALIANO",
+            "quantidade": 0.245,
+            "valorUnitario": 11.95,
+            "valorTotal": 293
+          }
+        ]
+      },
+      "obtido": {
+        "cnpjEmitente": "01171838000100",
+        "dataEmissao": "2025-11-10",
+        "valorTotal": 28116,
+        "desconto": 0,
+        "frete": 0,
+        "itens": [
+          {
+            "descricao": "CABO HDMI 2.0 1,5M",
+            "quantidade": 4,
+            "valorUnitario": 30.96,
+            "valorTotal": 12384
+          },
+          {
+            "descricao": "CANETA ESFEROGRAFICA AZUL",
+            "quantidade": 1,
+            "valorUnitario": 3.5,
+            "valorTotal": 350
+          },
+          {
+            "descricao": "ACUCAR CRISTAL 5KG",
+            "quantidade": 4,
+            "valorUnitario": 28.69,
+            "valorTotal": 11476
+          },
+          {
+            "descricao": "ARROZ TIPO 1 5KG",
+            "quantidade": 1,
+            "valorUnitario": 36.13,
+            "valorTotal": 3613
+          },
+          {
+            "descricao": "TOMATE ITALIANO",
+            "quantidade": 0.245,
+            "valorUnitario": 11.95,
+            "valorTotal": 293
+          }
+        ]
+      },
+      "custoUsd": 0.0003719,
+      "latenciaMs": 1607
+    }
+  ]
+}
