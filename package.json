@@ -17,6 +17,7 @@
     "test:e2e": "playwright test",
     "eval:gerar": "tsx eval/gerar.ts",
     "eval": "tsx --env-file-if-exists=.env eval/rodar.ts",
+    "sonar": "bash scripts/sonar.sh",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate"
   },

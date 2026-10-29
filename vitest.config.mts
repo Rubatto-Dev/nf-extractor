@@ -30,9 +30,10 @@ export default defineConfig({
     ],
     coverage: {
       provider: "v8",
-      include: ["src/nf/**/*.ts"],
+      include: ["src/nf/**/*.ts", "src/ui/**/*.{ts,tsx}", "eval/**/*.ts"],
       exclude: [
-        "src/**/*.test.ts",
+        "src/**/*.test.{ts,tsx}",
+        "eval/**/*.test.ts",
         "src/**/testes/**",
         "src/nf/domain/nota.ts",
         "src/nf/application/portas.ts",

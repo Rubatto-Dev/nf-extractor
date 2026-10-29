@@ -47,3 +47,6 @@ next-env.d.ts
 
 # notas sintéticas renderizadas (regeráveis com npm run eval:gerar)
 /eval/notas/
+
+# sonar
+/.scannerwork/
