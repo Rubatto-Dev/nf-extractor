@@ -7,7 +7,7 @@ import { ClaudeExtrator } from "../src/nf/infra/claude-extrator";
 import { calcularRelatorio, type Execucao } from "./metricas";
 import { DATA_REFERENCIA } from "./sintetico";
 
-// Uso: npm run eval -- --model claude-opus-5-5 [--limite 3] [--concorrencia 3]
+// Uso: npm run eval -- --model claude-sonnet-5-5 [--limite 3] [--concorrencia 3]
 // GASTA COM A API. Pré-requisitos: npm run eval:gerar e ANTHROPIC_API_KEY no .env.
 
 interface ItemGabarito {
@@ -19,7 +19,7 @@ interface ItemGabarito {
 
 const { values } = parseArgs({
   options: {
-    model: { type: "string", default: "claude-opus-5-5" },
+    model: { type: "string", default: "claude-sonnet-5-5" },
     limite: { type: "string" },
     concorrencia: { type: "string", default: "3" },
   },

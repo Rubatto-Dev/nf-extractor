@@ -8,7 +8,7 @@ describe("parseConfig", () => {
     const c = parseConfig({ ...base, EXTRACTOR: "fake" });
     expect(c).toMatchObject({
       EXTRACTOR: "fake",
-      EXTRACTION_MODEL: "claude-opus-5-5",
+      EXTRACTION_MODEL: "claude-sonnet-5-5",
       DAILY_BUDGET_USD: 1,
     });
   });

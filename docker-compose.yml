@@ -35,7 +35,7 @@ services:
       DATABASE_URL: postgres://nf:nf@db:5432/nf
       EXTRACTOR: ${EXTRACTOR:-fake}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
-      EXTRACTION_MODEL: ${EXTRACTION_MODEL:-claude-opus-5-5}
+      EXTRACTION_MODEL: ${EXTRACTION_MODEL:-claude-sonnet-5-5}
       DAILY_BUDGET_USD: ${DAILY_BUDGET_USD:-1}
     ports:
       - "3000:3000"
