@@ -1,4 +1,5 @@
-export type Centavos = number;
+// Alias de propósito: documenta a unidade em toda assinatura que lida com dinheiro.
+export type Centavos = number; // NOSONAR (S6564)
 
 export function paraCentavos(reais: number): Centavos {
   if (!Number.isFinite(reais)) throw new Error(`valor monetário inválido: ${reais}`);
@@ -15,14 +16,14 @@ export function centavosParaDecimal(c: Centavos): string {
 const brl = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
 export function formatarReais(c: Centavos): string {
-  return brl.format(c / 100).replace(/ /g, " ");
+  return brl.format(c / 100).replaceAll(" ", " ");
 }
 
 /** Número digitado em pt-BR ("1.234,56", "R$ 10", "0,916") → número; null se não for número. */
 export function lerDecimalBr(texto: string): number | null {
-  const limpo = texto.replace(/R\$|\s/g, "");
+  const limpo = texto.replaceAll(/R\$|\s/g, "");
   if (!/^-?[\d.]*,?\d*$/.test(limpo) || !/\d/.test(limpo)) return null;
-  return Number(limpo.replace(/\./g, "").replace(",", "."));
+  return Number(limpo.replaceAll(".", "").replace(",", "."));
 }
 
 export function lerReais(texto: string): Centavos | null {

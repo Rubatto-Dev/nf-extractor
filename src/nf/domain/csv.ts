@@ -24,7 +24,7 @@ export interface NotaExportavel {
 }
 
 function campo(valor: string): string {
-  return /[;"\r\n]/.test(valor) ? `"${valor.replace(/"/g, '""')}"` : valor;
+  return /[;"\r\n]/.test(valor) ? `"${valor.replaceAll('"', '""')}"` : valor;
 }
 
 function decimal(n: number): string {

@@ -3,7 +3,10 @@
 import type { ReactNode } from "react";
 import type { Preview } from "./previews";
 
-export function Visualizador({ preview, children }: { preview?: Preview; children?: ReactNode }) {
+export function Visualizador({
+  preview,
+  children,
+}: Readonly<{ preview?: Preview; children?: ReactNode }>) {
   return (
     <div className="flex flex-1 items-start justify-center overflow-auto bg-palco px-6 py-8">
       <div className="relative w-full max-w-[560px] overflow-hidden bg-[#fcfcfa] shadow-papel">
@@ -19,7 +22,11 @@ export function Visualizador({ preview, children }: { preview?: Preview; childre
             type="application/pdf"
             aria-label="Nota fiscal em PDF"
             className="block h-[720px] w-full"
-          />
+          >
+            <a href={preview.url} className="block p-8 text-center text-sm text-link">
+              Abrir o PDF da nota
+            </a>
+          </object>
         )}
         {preview && preview.mime !== "application/pdf" && (
           // eslint-disable-next-line @next/next/no-img-element -- blob: local, não passa pelo otimizador

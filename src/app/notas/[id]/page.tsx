@@ -10,7 +10,12 @@ import { type ItemFila, Revisao } from "@/ui/revisao";
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
-async function Conteudo({ params }: { params: PageProps<"/notas/[id]">["params"] }) {
+function resumoAlertas(quantidade: number) {
+  if (quantidade === 0) return "sem alertas";
+  return `${quantidade} ${quantidade === 1 ? "alerta" : "alertas"}`;
+}
+
+async function Conteudo({ params }: Readonly<{ params: PageProps<"/notas/[id]">["params"] }>) {
   await connection();
   const { id } = await params;
   if (!UUID.test(id)) notFound();
@@ -34,11 +39,7 @@ async function Conteudo({ params }: { params: PageProps<"/notas/[id]">["params"]
       nome: l.nomeArquivo,
       alerta: l.sinalizacoes.length > 0 || l.situacao === "falhou",
       detalhe: l.nota
-        ? `${formatarReais(l.nota.valorTotal)} · ${
-            l.sinalizacoes.length === 0
-              ? "sem alertas"
-              : `${l.sinalizacoes.length} ${l.sinalizacoes.length === 1 ? "alerta" : "alertas"}`
-          }`
+        ? `${formatarReais(l.nota.valorTotal)} · ${resumoAlertas(l.sinalizacoes.length)}`
         : "não extraída",
     }));
 
@@ -60,7 +61,7 @@ async function Conteudo({ params }: { params: PageProps<"/notas/[id]">["params"]
   );
 }
 
-export default function Pagina({ params }: PageProps<"/notas/[id]">) {
+export default function Pagina({ params }: Readonly<PageProps<"/notas/[id]">>) {
   return (
     <Suspense
       fallback={<div className="min-h-dvh animate-pulsa bg-fundo" aria-label="Carregando nota" />}

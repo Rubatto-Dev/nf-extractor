@@ -60,27 +60,26 @@ export interface Relatorio {
   latenciaMs: { p50: number; p95: number };
 }
 
+function avaliar(e: Execucao, hoje: string) {
+  const campos = camposCorretos(e.esperado, e.obtido);
+  return {
+    campos,
+    perfeita: CAMPOS.every((campo) => campos[campo]),
+    // falha de extração conta como sinalizada: a nota vai para "falhou" e não chega ao CSV
+    sinalizada: e.obtido ? validarNota(e.obtido, hoje).length > 0 : true,
+  };
+}
+
 export function calcularRelatorio(execucoes: Execucao[], hoje: string): Relatorio {
   const n = execucoes.length;
-  const acertos = Object.fromEntries(CAMPOS.map((c) => [c, 0])) as Record<Campo, number>;
-  let perfeitas = 0;
-  let comErro = 0;
-  let pegos = 0;
-  let falsosAlarmes = 0;
-
-  for (const e of execucoes) {
-    const c = camposCorretos(e.esperado, e.obtido);
-    for (const campo of CAMPOS) if (c[campo]) acertos[campo]++;
-    const perfeita = CAMPOS.every((campo) => c[campo]);
-    const sinalizada = e.obtido ? validarNota(e.obtido, hoje).length > 0 : true;
-    if (perfeita) {
-      perfeitas++;
-      if (sinalizada) falsosAlarmes++;
-    } else {
-      comErro++;
-      if (sinalizada) pegos++;
-    }
-  }
+  const avaliadas = execucoes.map((e) => avaliar(e, hoje));
+  const acertos = Object.fromEntries(
+    CAMPOS.map((c) => [c, avaliadas.filter((a) => a.campos[c]).length]),
+  ) as Record<Campo, number>;
+  const perfeitas = avaliadas.filter((a) => a.perfeita);
+  const comErro = avaliadas.filter((a) => !a.perfeita);
+  const pegos = comErro.filter((a) => a.sinalizada).length;
+  const falsosAlarmes = perfeitas.filter((a) => a.sinalizada).length;
 
   const custoTotal = execucoes.reduce((a, e) => a + e.custoUsd, 0);
   const latencias = execucoes.filter((e) => e.obtido).map((e) => e.latenciaMs);
@@ -93,8 +92,8 @@ export function calcularRelatorio(execucoes: Execucao[], hoje: string): Relatori
       Campo,
       number
     >,
-    notasPerfeitas: pct(perfeitas),
-    errosSinalizados: { pegos, deNotasComErro: comErro },
+    notasPerfeitas: pct(perfeitas.length),
+    errosSinalizados: { pegos, deNotasComErro: comErro.length },
     falsosAlarmes,
     custoMedioUsd: n === 0 ? 0 : custoTotal / n,
     custoTotalUsd: custoTotal,

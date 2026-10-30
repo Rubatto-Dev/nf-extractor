@@ -39,7 +39,4 @@ async function main() {
   console.log(`${gabarito.length} notas em ${SAIDA}/ e gabarito em eval/gabarito.json`);
 }
 
-main().catch((err: unknown) => {
-  console.error(err);
-  process.exit(1);
-});
+await main();

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { createContext, type ReactNode, use, useState } from "react";
+import { createContext, type ReactNode, use, useCallback, useMemo, useState } from "react";
 import { IconeEnviar, IconeVarrer, IconeVoltar } from "./icones";
 import { guardarPreview, type Preview } from "./previews";
 import { reduzirImagem } from "./reduzir-imagem";
@@ -41,49 +41,59 @@ function descrever(arquivo: File) {
   return `${tipo} · ${kb} KB`;
 }
 
-export function EnvioProvider({ children }: { children: ReactNode }) {
+function sortearAmostra() {
+  const [n = 0] = crypto.getRandomValues(new Uint32Array(1));
+  return AMOSTRAS[n % AMOSTRAS.length] ?? AMOSTRAS[0]!;
+}
+
+export function EnvioProvider({ children }: Readonly<{ children: ReactNode }>) {
   const router = useRouter();
   const [andamento, setAndamento] = useState<EmAndamento | null>(null);
   const [erro, setErro] = useState<string | null>(null);
 
-  async function enviar(original: File) {
-    setErro(null);
-    if (!ACEITOS.includes(original.type)) {
-      setErro("Formato não aceito. Use PDF, JPEG, PNG ou WebP.");
-      return;
-    }
-    const arquivo = await reduzirImagem(original);
-    if (arquivo.size > TAMANHO_MAXIMO) {
-      setErro("O arquivo passa de 4 MB.");
-      return;
-    }
-    const preview = { url: URL.createObjectURL(arquivo), mime: arquivo.type };
-    setAndamento({ nome: arquivo.name, descricao: descrever(arquivo), preview });
+  const enviar = useCallback(
+    async (original: File) => {
+      setErro(null);
+      if (!ACEITOS.includes(original.type)) {
+        setErro("Formato não aceito. Use PDF, JPEG, PNG ou WebP.");
+        return;
+      }
+      const arquivo = await reduzirImagem(original);
+      if (arquivo.size > TAMANHO_MAXIMO) {
+        setErro("O arquivo passa de 4 MB.");
+        return;
+      }
+      const preview = { url: URL.createObjectURL(arquivo), mime: arquivo.type };
+      setAndamento({ nome: arquivo.name, descricao: descrever(arquivo), preview });
 
-    const form = new FormData();
-    form.append("arquivo", arquivo);
-    try {
-      const resposta = await fetch("/api/notas", { method: "POST", body: form });
-      const corpo = await resposta.json();
-      if (!resposta.ok)
-        throw new Error(corpo?.erro?.mensagem ?? "Não foi possível extrair a nota.");
-      guardarPreview(corpo.documentoId, preview);
-      router.push(`/notas/${corpo.documentoId}`);
-    } catch (e) {
-      setAndamento(null);
-      setErro(e instanceof Error ? e.message : "Não foi possível extrair a nota.");
-      router.refresh();
-    }
-  }
+      const form = new FormData();
+      form.append("arquivo", arquivo);
+      try {
+        const resposta = await fetch("/api/notas", { method: "POST", body: form });
+        const corpo = await resposta.json();
+        if (!resposta.ok)
+          throw new Error(corpo?.erro?.mensagem ?? "Não foi possível extrair a nota.");
+        guardarPreview(corpo.documentoId, preview);
+        router.push(`/notas/${corpo.documentoId}`);
+      } catch (e) {
+        setAndamento(null);
+        setErro(e instanceof Error ? e.message : "Não foi possível extrair a nota.");
+        router.refresh();
+      }
+    },
+    [router],
+  );
 
-  async function enviarExemplo() {
-    const amostra = AMOSTRAS[Math.floor(Math.random() * AMOSTRAS.length)] ?? AMOSTRAS[0]!;
+  const enviarExemplo = useCallback(async () => {
+    const amostra = sortearAmostra();
     const blob = await (await fetch(`/amostras/${amostra.nome}`)).blob();
     await enviar(new File([blob], amostra.nome, { type: amostra.tipo }));
-  }
+  }, [enviar]);
+
+  const valor = useMemo(() => ({ enviar, enviarExemplo, erro }), [enviar, enviarExemplo, erro]);
 
   return (
-    <EnvioContexto value={{ enviar, enviarExemplo, erro }}>
+    <EnvioContexto value={valor}>
       {children}
       {andamento && <Extraindo {...andamento} />}
     </EnvioContexto>
@@ -159,17 +169,17 @@ export function ZonaEnvio() {
   );
 }
 
-function Esqueleto({ className }: { className: string }) {
+function Esqueleto({ className }: Readonly<{ className: string }>) {
   return <div className={`rounded ${className}`} />;
 }
 
-function Extraindo({ nome, descricao, preview }: EmAndamento) {
+function Extraindo({ nome, descricao, preview }: Readonly<EmAndamento>) {
   return (
-    <div
-      role="dialog"
+    <dialog
+      open
       aria-modal="true"
       aria-label="Extraindo a nota"
-      className="fixed inset-0 z-50 flex flex-col overflow-auto bg-fundo lg:flex-row"
+      className="fixed inset-0 z-50 m-0 flex size-full max-h-none max-w-none flex-col overflow-auto bg-fundo p-0 text-tinta lg:flex-row"
     >
       <aside className="hidden w-60 shrink-0 flex-col gap-1 border-r border-black/[0.08] bg-lateral px-2.5 py-4 lg:flex">
         <span className="flex items-center gap-1.5 px-2.5 pb-3.5 text-[13px] font-medium text-link">
@@ -233,6 +243,6 @@ function Extraindo({ nome, descricao, preview }: EmAndamento) {
           soma dos itens e data.
         </p>
       </aside>
-    </div>
+    </dialog>
   );
 }

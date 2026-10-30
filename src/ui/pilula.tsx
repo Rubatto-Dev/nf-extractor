@@ -8,7 +8,7 @@ const ESTILO: Record<Situacao, { classe: string; texto: string }> = {
   falhou: { classe: "bg-neutro-fundo text-neutro", texto: "Falhou" },
 };
 
-export function Pilula({ situacao }: { situacao: Situacao }) {
+export function Pilula({ situacao }: Readonly<{ situacao: Situacao }>) {
   const { classe, texto } = ESTILO[situacao];
   return (
     <span

@@ -15,8 +15,8 @@
     "test:int": "vitest run --project integracao",
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
-    "eval:gerar": "tsx eval/gerar.ts",
-    "eval": "tsx --env-file-if-exists=.env eval/rodar.ts",
+    "eval:gerar": "tsx eval/gerar.mts",
+    "eval": "tsx --env-file-if-exists=.env eval/rodar.mts",
     "sonar": "bash scripts/sonar.sh",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate"

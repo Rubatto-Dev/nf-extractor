@@ -80,7 +80,8 @@ async function main() {
   );
 
   const data = new Date().toISOString().slice(0, 10);
-  const saida = `eval/resultados/${data}-${values.model}${values.limite ? `-amostra${values.limite}` : ""}.json`;
+  const sufixo = values.limite ? "-amostra" + values.limite : "";
+  const saida = `eval/resultados/${data}-${values.model}${sufixo}.json`;
   await mkdir("eval/resultados", { recursive: true });
   await writeFile(
     saida,
@@ -90,7 +91,4 @@ async function main() {
   console.log(`resultado em ${saida}`);
 }
 
-main().catch((err: unknown) => {
-  console.error(err);
-  process.exit(1);
-});
+await main();

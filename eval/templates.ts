@@ -6,7 +6,7 @@ const brl = (centavos: number) =>
 const num = (n: number, casas: number) =>
   n.toLocaleString("pt-BR", { minimumFractionDigits: casas, maximumFractionDigits: casas });
 const dataBr = (iso: string) => iso.split("-").reverse().join("/");
-const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+const esc = (s: string) => s.replaceAll("&", "&amp;").replaceAll("<", "&lt;");
 const chave = (c: string) => c.match(/.{4}/g)?.join(" ") ?? c;
 
 const BASE_CSS = `
@@ -115,7 +115,7 @@ export function nfceHtml(s: NotaSintetica): string {
 /** Envolve a nota numa "foto": mesa, sombra, inclinação e leve desfoque. */
 export function fotoHtml(conteudo: string, angulo: number, inclinacao: number): string {
   const corpo = conteudo.replace(/^[\s\S]*<body>/, "").replace(/<\/body>[\s\S]*$/, "");
-  const estilo = conteudo.match(/<style>([\s\S]*?)<\/style>/)?.[1] ?? "";
+  const estilo = /<style>([\s\S]*?)<\/style>/.exec(conteudo)?.[1] ?? "";
   return `<!doctype html><html><head><meta charset="utf-8"><style>${estilo}
     body { background: transparent; }
     .cena { display: inline-block; padding: 70px; background: radial-gradient(circle at 30% 20%, #8a7560, #4b3d30); }

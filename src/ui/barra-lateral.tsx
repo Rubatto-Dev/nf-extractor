@@ -7,13 +7,15 @@ interface Props {
   contagem: { todas: number; revisao: number; aprovada: number };
 }
 
-function Item(props: {
-  href: string;
-  ativo: boolean;
-  icone: ReactNode;
-  rotulo: string;
-  total: number;
-}) {
+function Item(
+  props: Readonly<{
+    href: string;
+    ativo: boolean;
+    icone: ReactNode;
+    rotulo: string;
+    total: number;
+  }>,
+) {
   return (
     <Link
       href={props.href}
@@ -29,7 +31,7 @@ function Item(props: {
   );
 }
 
-export function BarraLateral({ ativo, contagem }: Props) {
+export function BarraLateral({ ativo, contagem }: Readonly<Props>) {
   return (
     <nav
       aria-label="Navegação"

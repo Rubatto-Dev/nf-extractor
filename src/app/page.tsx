@@ -17,6 +17,11 @@ type Filtro = "todas" | "revisao" | "aprovada";
 const usd = (v: number) =>
   `US$ ${v.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 
+function rotuloAcao(situacao: LinhaPainel["situacao"]) {
+  if (situacao === "aprovada") return "Ver";
+  return situacao === "falhou" ? "Detalhes" : "Revisar";
+}
+
 function filtrar(linhas: LinhaPainel[], filtro: Filtro) {
   if (filtro === "revisao") {
     return linhas.filter((l) => l.situacao === "revisao" || l.situacao === "divergente");
@@ -25,7 +30,11 @@ function filtrar(linhas: LinhaPainel[], filtro: Filtro) {
   return linhas;
 }
 
-function Cartao({ valor, rotulo, alerta }: { valor: string; rotulo: string; alerta?: boolean }) {
+function Cartao({
+  valor,
+  rotulo,
+  alerta,
+}: Readonly<{ valor: string; rotulo: string; alerta?: boolean }>) {
   return (
     <div className="rounded-cartao bg-superficie px-4.5 py-4 shadow-cartao">
       <div
@@ -38,7 +47,11 @@ function Cartao({ valor, rotulo, alerta }: { valor: string; rotulo: string; aler
   );
 }
 
-function Segmento({ filtro, atual, rotulo }: { filtro: Filtro; atual: Filtro; rotulo: string }) {
+function Segmento({
+  filtro,
+  atual,
+  rotulo,
+}: Readonly<{ filtro: Filtro; atual: Filtro; rotulo: string }>) {
   const ativo = filtro === atual;
   return (
     <Link
@@ -53,7 +66,9 @@ function Segmento({ filtro, atual, rotulo }: { filtro: Filtro; atual: Filtro; ro
   );
 }
 
-async function Painel({ searchParams }: { searchParams: PageProps<"/">["searchParams"] }) {
+async function Painel({
+  searchParams,
+}: Readonly<{ searchParams: PageProps<"/">["searchParams"] }>) {
   await connection();
   const { filtro: bruto } = await searchParams;
   const filtro: Filtro = bruto === "revisao" || bruto === "aprovada" ? bruto : "todas";
@@ -175,11 +190,7 @@ async function Painel({ searchParams }: { searchParams: PageProps<"/">["searchPa
                             href={`/notas/${l.id}`}
                             className="text-[13px] font-medium text-link hover:underline"
                           >
-                            {l.situacao === "aprovada"
-                              ? "Ver"
-                              : l.situacao === "falhou"
-                                ? "Detalhes"
-                                : "Revisar"}
+                            {rotuloAcao(l.situacao)}
                             <span className="sr-only"> {l.nomeArquivo}</span>
                           </Link>
                         </td>
@@ -213,7 +224,7 @@ function Carregando() {
   );
 }
 
-export default function Pagina({ searchParams }: PageProps<"/">) {
+export default function Pagina({ searchParams }: Readonly<PageProps<"/">>) {
   return (
     <Suspense fallback={<Carregando />}>
       <Painel searchParams={searchParams} />
