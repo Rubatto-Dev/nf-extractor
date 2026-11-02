@@ -22,6 +22,17 @@ describe("parseConfig", () => {
     expect(c.EXTRACTOR).toBe("claude");
   });
 
+  it("deixa a limpeza desligada por padrão e exige segredo quando ela é ligada", () => {
+    const fake = { ...base, EXTRACTOR: "fake" };
+    expect(parseConfig(fake).PURGE_AFTER_HOURS).toBeUndefined();
+    expect(() => parseConfig({ ...fake, PURGE_AFTER_HOURS: "24" })).toThrow(/CRON_SECRET/);
+    expect(() => parseConfig({ ...fake, PURGE_AFTER_HOURS: "24", CRON_SECRET: "curto" })).toThrow(
+      /CRON_SECRET/,
+    );
+    const c = parseConfig({ ...fake, PURGE_AFTER_HOURS: "24", CRON_SECRET: "x".repeat(32) });
+    expect(c.PURGE_AFTER_HOURS).toBe(24);
+  });
+
   it("rejeita URL de banco que não é postgres e lista os problemas", () => {
     try {
       parseConfig({ DATABASE_URL: "mysql://x", EXTRACTOR: "fake", DAILY_BUDGET_USD: "-1" });

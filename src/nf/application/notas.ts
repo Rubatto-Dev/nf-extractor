@@ -72,3 +72,14 @@ export async function revisarNota(
 export async function exportarCsv(repo: NotaRepositorio): Promise<string> {
   return gerarCsv(await repo.listarAprovadas());
 }
+
+const HORA_MS = 60 * 60 * 1000;
+
+/** Apaga documentos (com extração, nota e itens) criados há mais de `horas`. */
+export async function apagarExpiradas(
+  repo: NotaRepositorio,
+  agora: Date,
+  horas: number,
+): Promise<number> {
+  return repo.apagarAnterioresA(new Date(agora.getTime() - horas * HORA_MS));
+}
