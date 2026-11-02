@@ -53,6 +53,12 @@ describe("leitura de valores digitados", () => {
     expect(lerDecimalBr(texto)).toBe(esperado);
   });
 
+  it("recusa texto longo sem backtracking quadrático", () => {
+    const inicio = performance.now();
+    expect(lerDecimalBr(`${"1".repeat(200_000)}x`)).toBeNull();
+    expect(performance.now() - inicio).toBeLessThan(1000);
+  });
+
   it("lerReais devolve centavos ou null", () => {
     expect(lerReais("R$ 1.234,56")).toBe(123456);
     expect(lerReais("x")).toBeNull();

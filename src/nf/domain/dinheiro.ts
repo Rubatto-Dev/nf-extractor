@@ -22,7 +22,8 @@ export function formatarReais(c: Centavos): string {
 /** Número digitado em pt-BR ("1.234,56", "R$ 10", "0,916") → número; null se não for número. */
 export function lerDecimalBr(texto: string): number | null {
   const limpo = texto.replaceAll(/R\$|\s/g, "");
-  if (!/^-?[\d.]*,?\d*$/.test(limpo) || !/\d/.test(limpo)) return null;
+  // ",\d*" é um grupo só: sem competir com [\d.]* pelos mesmos dígitos, não há backtracking
+  if (!/^-?[\d.]*(?:,\d*)?$/.test(limpo) || !/\d/.test(limpo)) return null;
   return Number(limpo.replaceAll(".", "").replace(",", "."));
 }
 
