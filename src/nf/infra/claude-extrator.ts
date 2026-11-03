@@ -72,6 +72,12 @@ function blocoArquivo(arquivo: Arquivo) {
   };
 }
 
+function motivoDaApi(err: InstanceType<typeof Anthropic.APIError>): string | undefined {
+  const corpo = err.error as { error?: { message?: unknown } } | undefined;
+  const msg = corpo?.error?.message;
+  return typeof msg === "string" ? msg.slice(0, 200) : undefined;
+}
+
 function erroDaApi(err: unknown): ErroExtracao {
   if (err instanceof Anthropic.RateLimitError) {
     return new ErroExtracao("indisponivel", "Limite de requisições da API atingido.", undefined, {
@@ -79,9 +85,14 @@ function erroDaApi(err: unknown): ErroExtracao {
     });
   }
   if (err instanceof Anthropic.BadRequestError) {
-    return new ErroExtracao("requisicao_invalida", "A API recusou o arquivo enviado.", undefined, {
-      cause: err,
-    });
+    // a mensagem da API diz o motivo real (crédito, limite, arquivo); sem ela o 400 fica opaco
+    const detalhe = motivoDaApi(err);
+    return new ErroExtracao(
+      "requisicao_invalida",
+      detalhe ? `A API recusou a requisição: ${detalhe}` : "A API recusou a requisição.",
+      undefined,
+      { cause: err },
+    );
   }
   if (err instanceof Anthropic.APIConnectionError || err instanceof Anthropic.InternalServerError) {
     return new ErroExtracao("indisponivel", "A API está indisponível.", undefined, { cause: err });

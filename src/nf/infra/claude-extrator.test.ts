@@ -109,6 +109,20 @@ describe("ClaudeExtrator", () => {
     const parse = vi.fn().mockRejectedValue(erro);
     await expect(extrator(parse).extrair(pdf)).rejects.toMatchObject({ motivo, uso: undefined });
   });
+
+  it("repassa o motivo que a API deu para o 400", async () => {
+    const corpo = {
+      type: "error",
+      error: { type: "invalid_request_error", message: "Your credit balance is too low." },
+    };
+    const parse = vi
+      .fn()
+      .mockRejectedValue(new Anthropic.BadRequestError(400, corpo, "bad", new Headers()));
+    await expect(extrator(parse).extrair(pdf)).rejects.toMatchObject({
+      motivo: "requisicao_invalida",
+      message: "A API recusou a requisição: Your credit balance is too low.",
+    });
+  });
 });
 
 describe("paraNota", () => {
