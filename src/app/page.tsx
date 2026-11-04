@@ -7,6 +7,7 @@ import { hojeEmBrasilia, isoParaBr } from "@/nf/domain/datas";
 import { formatarReais } from "@/nf/domain/dinheiro";
 import { getConfig } from "@/nf/infra/config";
 import { repositorio } from "@/nf/infra/container";
+import { AvisoSemIa } from "@/ui/aviso-sem-ia";
 import { BarraLateral } from "@/ui/barra-lateral";
 import { BotaoExemplo, EnvioProvider, ZonaEnvio } from "@/ui/envio";
 import { IconeBaixar } from "@/ui/icones";
@@ -109,6 +110,8 @@ async function Painel({
               </a>
             </div>
           </header>
+
+          {getConfig().EXTRACTOR === "fake" && <AvisoSemIa />}
 
           <section aria-label="Resumo" className="grid grid-cols-2 gap-3 lg:grid-cols-4">
             <Cartao valor={String(contagem.revisao)} rotulo="Em revisão" />

@@ -26,6 +26,8 @@ test("envia, corrige, aprova e exporta", async ({ page, request }) => {
   await page.goto("/");
   await page.waitForLoadState("networkidle");
   await expect(page.getByRole("heading", { name: "Notas" })).toBeVisible();
+  // com o extrator fake a tela avisa que a IA está desligada, para ninguém achar que ela errou
+  await expect(page.getByRole("note")).toContainText("Leitura por IA desligada nesta demo");
   await page.locator("#arquivo").setInputFiles({ name: nome, mimeType: "application/pdf", buffer });
 
   await expect(page).toHaveURL(/\/notas\/[0-9a-f-]{36}$/);
