@@ -4,7 +4,12 @@ Accounting offices in Brazil still retype invoices (_notas fiscais_) by hand fro
 nf-extractor reads the invoice with Claude, checks it against business rules, and hands a person a
 side-by-side review screen that exports straight to an Excel-ready CSV.
 
-**Demo:** _link after deploy_ · runs on Claude Haiku 5.5 with a daily spend cap, using fictitious invoices.
+**Live demo: [nf-extractor-gamma.vercel.app](https://nf-extractor-gamma.vercel.app)**. The public demo
+runs with the model switched off, so it costs nothing to keep online: the three sample invoices
+return their answer-key data and any other file gets one fixed fictitious invoice. The screen says
+so. Real extraction runs locally with your own key; its measured results are below.
+
+![Upload, a misread item caught by the rules, the fix, and approval](docs/demo.gif)
 
 ## The number
 
@@ -66,9 +71,11 @@ docker compose up
 ```
 
 App at http://localhost:3000, health check at `/api/health`. Without `ANTHROPIC_API_KEY` it starts
-with a fake extractor (fixed fictitious invoice, no network), which is also what the e2e tests use.
+with the fake extractor (no network), which is also what the e2e tests and the public demo use.
+For real extraction, put `ANTHROPIC_API_KEY` in `.env` and set `EXTRACTOR=claude`.
 
 Development: `npm install`, then `docker compose up -d db`, `npm run db:migrate`, `npm run dev`.
+`npx tsx scripts/gravar-gif.mts` re-records the GIF above.
 
 ## Decisions
 

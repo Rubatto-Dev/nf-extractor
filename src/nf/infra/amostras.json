@@ -1,0 +1,89 @@
+{
+  "amostra-danfe.pdf": {
+    "cnpjEmitente": "68293943000193",
+    "dataEmissao": "2026-02-09",
+    "valorTotal": 876212,
+    "desconto": 0,
+    "frete": 0,
+    "itens": [
+      {
+        "descricao": "SABAO EM PO 1,6KG",
+        "quantidade": 4,
+        "valorUnitario": 23.13,
+        "valorTotal": 9252
+      },
+      {
+        "descricao": "TINTA ACRILICA BRANCO 18L",
+        "quantidade": 40,
+        "valorUnitario": 216.74,
+        "valorTotal": 866960
+      }
+    ]
+  },
+  "amostra-danfe-foto.jpg": {
+    "cnpjEmitente": "01863199000144",
+    "dataEmissao": "2025-12-03",
+    "valorTotal": 119223,
+    "desconto": 4726,
+    "frete": 5788,
+    "itens": [
+      {
+        "descricao": "PAPEL A4 75G RESMA 500 FLS",
+        "quantidade": 12,
+        "valorUnitario": 32.35,
+        "valorTotal": 38820
+      },
+      {
+        "descricao": "BANANA PRATA",
+        "quantidade": 1.422,
+        "valorUnitario": 8.28,
+        "valorTotal": 1177
+      },
+      {
+        "descricao": "CANETA ESFEROGRAFICA AZUL",
+        "quantidade": 16,
+        "valorUnitario": 1.21,
+        "valorTotal": 1936
+      },
+      {
+        "descricao": "PARAFUSO SEXTAVADO 1/4 X 2",
+        "quantidade": 34,
+        "valorUnitario": 22.42,
+        "valorTotal": 76228
+      }
+    ]
+  },
+  "amostra-cupom.jpg": {
+    "cnpjEmitente": "97984542000188",
+    "dataEmissao": "2026-03-26",
+    "valorTotal": 19549,
+    "desconto": 1471,
+    "frete": 0,
+    "itens": [
+      {
+        "descricao": "PAPEL A4 75G RESMA 500 FLS",
+        "quantidade": 3,
+        "valorUnitario": 35.2,
+        "valorTotal": 10560
+      },
+      {
+        "descricao": "CAFE TORRADO MOIDO 500G",
+        "quantidade": 2,
+        "valorUnitario": 28.29,
+        "valorTotal": 5658
+      },
+      {
+        "descricao": "FEIJAO CARIOCA 1KG",
+        "quantidade": 2,
+        "valorUnitario": 9.21,
+        "valorTotal": 1842
+      },
+      {
+        "descricao": "OLEO DE SOJA 900ML",
+        "quantidade": 4,
+        "valorUnitario": 7.4,
+        "valorTotal": 2960
+      }
+    ]
+  }
+}

@@ -12,9 +12,10 @@ export function AvisoSemIa() {
     >
       <IconeAlerta tamanho={18} className="mt-px shrink-0" />
       <p>
-        <b>Leitura por IA desligada nesta demo.</b> Qualquer arquivo enviado devolve a mesma nota de
-        exemplo, para mostrar a revisão, os alertas e o CSV sem custo. A extração real com o Claude
-        foi medida em 30 notas, com os números no{" "}
+        <b>Leitura por IA desligada nesta demo.</b> As notas de exemplo trazem os dados delas;
+        qualquer outro arquivo recebe uma nota fictícia fixa. Assim dá para ver a revisão, os
+        alertas e o CSV sem custo. A extração real com o Claude foi medida em 30 notas, com os
+        números no{" "}
         <a href={README} className="font-medium underline underline-offset-2">
           README do projeto
         </a>
