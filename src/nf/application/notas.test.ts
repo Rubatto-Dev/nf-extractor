@@ -1,7 +1,13 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import type { Nota } from "../domain/nota";
 import { NotaComSinalizacoes, NotaNaoEncontrada } from "./erros";
-import { buscarParaRevisao, exportarCsv, montarPainel, revisarNota } from "./notas";
+import {
+  apagarExpiradas,
+  buscarParaRevisao,
+  exportarCsv,
+  montarPainel,
+  revisarNota,
+} from "./notas";
 import type { ResultadoExtracao } from "./portas";
 import { RepositorioEmMemoria } from "./testes/repositorio-em-memoria";
 
@@ -102,5 +108,20 @@ describe("exportarCsv", () => {
     const csv = await exportarCsv(repo);
     expect(csv).toContain("aprovada.pdf");
     expect(csv).not.toContain("pendente.pdf");
+  });
+});
+
+describe("apagarExpiradas", () => {
+  it("apaga só o que passou do prazo", async () => {
+    let relogio = new Date("2026-10-27T10:00:00Z");
+    repo = new RepositorioEmMemoria(() => relogio);
+    const velha = await novo(ok);
+    relogio = new Date("2026-10-28T09:00:00Z");
+    const nova = await novo(ok);
+
+    const apagadas = await apagarExpiradas(repo, new Date("2026-10-28T11:00:00Z"), 24);
+    expect(apagadas).toBe(1);
+    expect(await repo.buscar(velha)).toBeUndefined();
+    expect(await repo.buscar(nova)).toBeDefined();
   });
 });

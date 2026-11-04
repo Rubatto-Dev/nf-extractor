@@ -15,6 +15,11 @@ test("health check responde com o banco de pé", async ({ request }) => {
   expect(await r.json()).toEqual({ status: "ok" });
 });
 
+test("limpeza da demo fica desligada sem PURGE_AFTER_HOURS", async ({ request }) => {
+  const r = await request.get("/api/cron/limpeza", { headers: { authorization: "Bearer x" } });
+  expect(r.status()).toBe(404);
+});
+
 test("envia, corrige, aprova e exporta", async ({ page, request }) => {
   const { nome, buffer } = await pdfUnico();
 
