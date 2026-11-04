@@ -14,11 +14,10 @@ export function AvisoSemIa() {
       <p>
         <b>Leitura por IA desligada nesta demo.</b> Qualquer arquivo enviado devolve a mesma nota de
         exemplo, para mostrar a revisão, os alertas e o CSV sem custo. A extração real com o Claude
-        foi medida em 30 notas:{" "}
+        foi medida em 30 notas, com os números no{" "}
         <a href={README} className="font-medium underline underline-offset-2">
-          veja os números no README
+          README do projeto
         </a>
-        .
       </p>
     </div>
   );
